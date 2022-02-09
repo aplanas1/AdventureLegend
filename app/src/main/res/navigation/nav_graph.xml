@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="adventurelegend.game.HomeFragment"
+        android:name="adventurelegend.game.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,57 +22,57 @@
     </fragment>
     <fragment
         android:id="@+id/savesFragment"
-        android:name="adventurelegend.game.SavesFragment"
+        android:name="adventurelegend.game.fragments.SavesFragment"
         android:label="fragment_saves"
         tools:layout="@layout/fragment_saves" />
     <fragment
         android:id="@+id/optionsFragment"
-        android:name="adventurelegend.game.optionsFragment"
+        android:name="adventurelegend.game.fragments.optionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" />
     <fragment
         android:id="@+id/mapFragment"
-        android:name="adventurelegend.game.MapFragment"
+        android:name="adventurelegend.game.fragments.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
     <fragment
         android:id="@+id/townFragment"
-        android:name="adventurelegend.game.TownFragment"
+        android:name="adventurelegend.game.fragments.TownFragment"
         android:label="fragment_town"
         tools:layout="@layout/fragment_town" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="adventurelegend.game.ProfileFragment"
+        android:name="adventurelegend.game.fragments.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/skillsFragment"
-        android:name="adventurelegend.game.SkillsFragment"
+        android:name="adventurelegend.game.fragments.SkillsFragment"
         android:label="fragment_skills"
         tools:layout="@layout/fragment_skills" />
     <fragment
         android:id="@+id/questsFragment"
-        android:name="adventurelegend.game.QuestsFragment"
+        android:name="adventurelegend.game.fragments.QuestsFragment"
         android:label="fragment_quests"
         tools:layout="@layout/fragment_quests" />
     <fragment
         android:id="@+id/inventoryFragment"
-        android:name="adventurelegend.game.InventoryFragment"
+        android:name="adventurelegend.game.fragments.InventoryFragment"
         android:label="fragment_inventory"
         tools:layout="@layout/fragment_inventory" />
     <fragment
         android:id="@+id/combatFragment"
-        android:name="adventurelegend.game.CombatFragment"
+        android:name="adventurelegend.game.fragments.CombatFragment"
         android:label="fragment_combat"
         tools:layout="@layout/fragment_combat" />
     <fragment
         android:id="@+id/shopFragment"
-        android:name="adventurelegend.game.ShopFragment"
+        android:name="adventurelegend.game.fragments.ShopFragment"
         android:label="fragment_shop"
         tools:layout="@layout/fragment_shop" />
     <fragment
         android:id="@+id/newGameFragment"
-        android:name="adventurelegend.game.NewGameFragment"
+        android:name="adventurelegend.game.fragments.NewGameFragment"
         android:label="fragment_new_game"
         tools:layout="@layout/fragment_new_game" />
 </navigation>

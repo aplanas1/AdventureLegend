@@ -1,16 +1,14 @@
-package adventurelegend.game;
+package adventurelegend.game.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
-import adventurelegend.game.databinding.FragmentHomeBinding;
 import adventurelegend.game.databinding.FragmentSavesBinding;
 
 public class SavesFragment extends Fragment {
