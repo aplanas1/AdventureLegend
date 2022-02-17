@@ -56,10 +56,65 @@
         android:label="fragment_quests"
         tools:layout="@layout/fragment_quests" />
     <fragment
-        android:id="@+id/inventoryFragment"
-        android:name="adventurelegend.game.fragments.InventoryFragment"
+        android:id="@+id/inventoryFragment_weapons"
+        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
         android:label="fragment_inventory"
-        tools:layout="@layout/fragment_inventory" />
+        tools:layout="@layout/fragment_inventory_weapons" >
+        <action
+            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_armors"
+            app:destination="@id/inventoryFragment_armors" />
+        <action
+            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_potions"
+            app:destination="@id/inventoryFragment_potions" />
+        <action
+            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_special"
+            app:destination="@id/inventoryFragment_special" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment_armors"
+        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory_armors" >
+        <action
+            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_weapons"
+            app:destination="@id/inventoryFragment_weapons" />
+        <action
+            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_potions"
+            app:destination="@id/inventoryFragment_potions" />
+        <action
+            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_special"
+            app:destination="@id/inventoryFragment_special" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment_potions"
+        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory_potions" >
+        <action
+            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_armors"
+            app:destination="@id/inventoryFragment_armors" />
+        <action
+            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_weapons"
+            app:destination="@id/inventoryFragment_weapons" />
+        <action
+            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_special"
+            app:destination="@id/inventoryFragment_special" />
+    </fragment>
+    <fragment
+        android:id="@+id/inventoryFragment_special"
+        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:label="fragment_inventory"
+        tools:layout="@layout/fragment_inventory_special" >
+        <action
+            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_armors"
+            app:destination="@id/inventoryFragment_armors" />
+        <action
+            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_weapons"
+            app:destination="@id/inventoryFragment_weapons" />
+        <action
+            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_potions"
+            app:destination="@id/inventoryFragment_potions" />
+    </fragment>
     <fragment
         android:id="@+id/combatFragment"
         android:name="adventurelegend.game.fragments.CombatFragment"
