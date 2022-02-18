@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import adventurelegend.game.R;
-import adventurelegend.game.databinding.FragmentQuestsBinding;
+import adventurelegend.game.databinding.FragmentInventoryPotionsBinding;
 
-public class QuestsFragment extends Fragment {
+public class InventoryPotionsFragment extends Fragment {
 
-    private FragmentQuestsBinding binding;
+    private FragmentInventoryPotionsBinding binding;
     private NavController navController;
 
     @Override
@@ -27,7 +27,7 @@ public class QuestsFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentQuestsBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentInventoryPotionsBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -36,6 +36,27 @@ public class QuestsFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
+        // WEAPONS
+        binding.weaponsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_inventoryFragment_weapons);
+            }
+        });
+        // ARMORS
+        binding.armorsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_inventoryFragment_armors);
+            }
+        });
+        // SPECIAL
+        binding.specialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_inventoryFragment_special);
+            }
+        });
         // BACK
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override

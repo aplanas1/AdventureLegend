@@ -10,12 +10,16 @@
         <entry key="app/src/main/res/layout/fragment_inventory_armors.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_inventory_potions.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_inventory_special.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_inventory_weapons.xml" value="0.2726449275362319" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_mostrar_elemento.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_game.xml" value="0.32019927536231885" />
-        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_options.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_quests.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_recycler_elementos.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/fragment_saves.xml" value="0.27309782608695654" />
+        <entry key="app/src/main/res/layout/fragment_skills.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/viewholder_elemento.xml" value="0.35572916666666665" />
       </map>
     </option>

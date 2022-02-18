@@ -24,10 +24,14 @@
         android:id="@+id/savesFragment"
         android:name="adventurelegend.game.fragments.SavesFragment"
         android:label="fragment_saves"
-        tools:layout="@layout/fragment_saves" />
+        tools:layout="@layout/fragment_saves" >
+        <action
+            android:id="@+id/action_savesFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
     <fragment
         android:id="@+id/optionsFragment"
-        android:name="adventurelegend.game.fragments.optionsFragment"
+        android:name="adventurelegend.game.fragments.OptionsFragment"
         android:label="fragment_options"
         tools:layout="@layout/fragment_options" />
     <fragment
@@ -59,62 +63,22 @@
         android:id="@+id/inventoryFragment_weapons"
         android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
         android:label="fragment_inventory"
-        tools:layout="@layout/fragment_inventory_weapons" >
-        <action
-            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_armors"
-            app:destination="@id/inventoryFragment_armors" />
-        <action
-            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_potions"
-            app:destination="@id/inventoryFragment_potions" />
-        <action
-            android:id="@+id/action_inventoryFragment_weapons_to_inventoryFragment_special"
-            app:destination="@id/inventoryFragment_special" />
-    </fragment>
+        tools:layout="@layout/fragment_inventory_weapons" />
     <fragment
         android:id="@+id/inventoryFragment_armors"
-        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:name="adventurelegend.game.fragments.InventoryArmorsFragment"
         android:label="fragment_inventory"
-        tools:layout="@layout/fragment_inventory_armors" >
-        <action
-            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_weapons"
-            app:destination="@id/inventoryFragment_weapons" />
-        <action
-            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_potions"
-            app:destination="@id/inventoryFragment_potions" />
-        <action
-            android:id="@+id/action_inventoryFragment_armors_to_inventoryFragment_special"
-            app:destination="@id/inventoryFragment_special" />
-    </fragment>
+        tools:layout="@layout/fragment_inventory_armors" />
     <fragment
         android:id="@+id/inventoryFragment_potions"
-        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:name="adventurelegend.game.fragments.InventoryPotionsFragment"
         android:label="fragment_inventory"
-        tools:layout="@layout/fragment_inventory_potions" >
-        <action
-            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_armors"
-            app:destination="@id/inventoryFragment_armors" />
-        <action
-            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_weapons"
-            app:destination="@id/inventoryFragment_weapons" />
-        <action
-            android:id="@+id/action_inventoryFragment_potions_to_inventoryFragment_special"
-            app:destination="@id/inventoryFragment_special" />
-    </fragment>
+        tools:layout="@layout/fragment_inventory_potions" />
     <fragment
         android:id="@+id/inventoryFragment_special"
-        android:name="adventurelegend.game.fragments.InventoryWeaponsFragment"
+        android:name="adventurelegend.game.fragments.InventorySpecialFragment"
         android:label="fragment_inventory"
-        tools:layout="@layout/fragment_inventory_special" >
-        <action
-            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_armors"
-            app:destination="@id/inventoryFragment_armors" />
-        <action
-            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_weapons"
-            app:destination="@id/inventoryFragment_weapons" />
-        <action
-            android:id="@+id/action_inventoryFragment_special_to_inventoryFragment_potions"
-            app:destination="@id/inventoryFragment_potions" />
-    </fragment>
+        tools:layout="@layout/fragment_inventory_special" />
     <fragment
         android:id="@+id/combatFragment"
         android:name="adventurelegend.game.fragments.CombatFragment"
@@ -129,5 +93,17 @@
         android:id="@+id/newGameFragment"
         android:name="adventurelegend.game.fragments.NewGameFragment"
         android:label="fragment_new_game"
-        tools:layout="@layout/fragment_new_game" />
+        tools:layout="@layout/fragment_new_game" >
+        <action
+            android:id="@+id/action_newGameFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_inventoryFragment_weapons" app:destination="@id/inventoryFragment_weapons" />
+    <action android:id="@+id/action_global_inventoryFragment_armors" app:destination="@id/inventoryFragment_armors" />
+    <action android:id="@+id/action_global_inventoryFragment_potions" app:destination="@id/inventoryFragment_potions" />
+    <action android:id="@+id/action_global_inventoryFragment_special" app:destination="@id/inventoryFragment_special" />
+    <action android:id="@+id/action_global_mapFragment" app:destination="@id/mapFragment" />
+    <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
+    <action android:id="@+id/action_global_skillsFragment" app:destination="@id/skillsFragment" />
+    <action android:id="@+id/action_global_questsFragment" app:destination="@id/questsFragment" />
 </navigation>
