@@ -64,5 +64,8 @@ public class InventoryArmorsFragment extends Fragment {
                 navController.navigate(R.id.action_global_mapFragment);
             }
         });
+
+        //SLIDING
+
     }
 }

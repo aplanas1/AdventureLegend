@@ -20,7 +20,12 @@
         <entry key="app/src/main/res/layout/fragment_recycler_elementos.xml" value="0.17299898682877407" />
         <entry key="app/src/main/res/layout/fragment_saves.xml" value="0.27309782608695654" />
         <entry key="app/src/main/res/layout/fragment_skills.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/tab1a.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/viewholder_armor.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/viewholder_elemento.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/viewholder_item.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/viewholder_potion.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/viewholder_special.xml" value="0.35572916666666665" />
       </map>
     </option>
   </component>

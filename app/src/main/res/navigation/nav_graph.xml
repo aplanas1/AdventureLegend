@@ -14,9 +14,6 @@
             android:id="@+id/action_homeFragment_to_savesFragment"
             app:destination="@id/savesFragment" />
         <action
-            android:id="@+id/action_homeFragment_to_optionsFragment"
-            app:destination="@id/optionsFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_newGameFragment"
             app:destination="@id/newGameFragment" />
     </fragment>
@@ -24,11 +21,7 @@
         android:id="@+id/savesFragment"
         android:name="adventurelegend.game.fragments.SavesFragment"
         android:label="fragment_saves"
-        tools:layout="@layout/fragment_saves" >
-        <action
-            android:id="@+id/action_savesFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_saves" />
     <fragment
         android:id="@+id/optionsFragment"
         android:name="adventurelegend.game.fragments.OptionsFragment"
@@ -93,11 +86,7 @@
         android:id="@+id/newGameFragment"
         android:name="adventurelegend.game.fragments.NewGameFragment"
         android:label="fragment_new_game"
-        tools:layout="@layout/fragment_new_game" >
-        <action
-            android:id="@+id/action_newGameFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_new_game" />
     <action android:id="@+id/action_global_inventoryFragment_weapons" app:destination="@id/inventoryFragment_weapons" />
     <action android:id="@+id/action_global_inventoryFragment_armors" app:destination="@id/inventoryFragment_armors" />
     <action android:id="@+id/action_global_inventoryFragment_potions" app:destination="@id/inventoryFragment_potions" />
@@ -106,4 +95,5 @@
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
     <action android:id="@+id/action_global_skillsFragment" app:destination="@id/skillsFragment" />
     <action android:id="@+id/action_global_questsFragment" app:destination="@id/questsFragment" />
-</navigation>
+    <action android:id="@+id/action_global_optionsFragment" app:destination="@id/optionsFragment" />
+ES</navigation>

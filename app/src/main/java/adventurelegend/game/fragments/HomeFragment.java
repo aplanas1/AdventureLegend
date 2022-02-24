@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
         binding.optionsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_homeFragment_to_optionsFragment);
+                navController.navigate(R.id.action_global_optionsFragment);
             }
         });
         // EXIT
