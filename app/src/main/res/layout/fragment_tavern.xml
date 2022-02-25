@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ShopFragment">
+    tools:context=".fragments.TavernFragment">
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/shop"
+        android:src="@drawable/tavern"
         app:layout_constraintTop_toTopOf="@id/frameTop"
         app:layout_constraintBottom_toTopOf="@id/interaction"
         app:layout_constraintStart_toStartOf="parent"

@@ -95,5 +95,20 @@
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
     <action android:id="@+id/action_global_skillsFragment" app:destination="@id/skillsFragment" />
     <action android:id="@+id/action_global_questsFragment" app:destination="@id/questsFragment" />
-    <action android:id="@+id/action_global_optionsFragment" app:destination="@id/optionsFragment" />
-ES</navigation>
+    <action android:id="@+id/action_global_optionsFragment" app:destination="@id/optionsFragment" /><action android:id="@+id/action_global_townFragment" app:destination="@id/townFragment"/>
+    <fragment
+        android:id="@+id/forgeFragment"
+        android:name="adventurelegend.game.fragments.ForgeFragment"
+        android:label="fragment_forge"
+        tools:layout="@layout/fragment_forge" />
+    <fragment
+        android:id="@+id/tavernFragment"
+        android:name="adventurelegend.game.fragments.TavernFragment"
+        android:label="fragment_tavern"
+        tools:layout="@layout/fragment_tavern" />
+    <fragment
+        android:id="@+id/churchFragment"
+        android:name="adventurelegend.game.fragments.ChurchFragment"
+        android:label="fragment_church"
+        tools:layout="@layout/fragment_church" /><action android:id="@+id/action_global_tavernFragment" app:destination="@id/tavernFragment"/><action android:id="@+id/action_global_forgeFragment" app:destination="@id/forgeFragment"/><action android:id="@+id/action_global_shopFragment" app:destination="@id/shopFragment"/><action android:id="@+id/action_global_churchFragment" app:destination="@id/churchFragment"/>
+    ES</navigation>

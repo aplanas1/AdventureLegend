@@ -64,5 +64,12 @@ public class MapFragment extends Fragment {
                 navController.navigate(R.id.action_global_inventoryFragment_weapons);
             }
         });
+        // INTERACT
+        binding.button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_townFragment);
+            }
+        });
     }
 }

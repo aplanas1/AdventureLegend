@@ -6,10 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".fragments.MapFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#BF633C20"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/frameBottom"
+        app:layout_constraintTop_toBottomOf="@+id/frameTop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:listitem="@layout/viewholder_mapx" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameTop"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         android:background="#805741"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,27 +39,27 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/turnText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TURN"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/goldText"
             app:layout_constraintStart_toEndOf="@+id/settingsButton"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/textView6"/>
+            app:layout_constraintBottom_toTopOf="@id/placeText"/>
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/placeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LUGAR"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView7"
+            app:layout_constraintEnd_toStartOf="@+id/goldText"
             app:layout_constraintStart_toEndOf="@+id/settingsButton"
-            app:layout_constraintTop_toBottomOf="@+id/textView5" />
+            app:layout_constraintTop_toBottomOf="@+id/turnText" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/goldText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ORO"
@@ -60,7 +72,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameBottom"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="170dp"
         android:background="#805741"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Button"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -149,5 +161,6 @@
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

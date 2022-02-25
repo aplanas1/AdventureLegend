@@ -53,11 +53,11 @@ public class Player {
     }
 
     public void unequipWeapon(Weapon weapon){
-        this.weapon = new Weapon("Nada", 0, "Nada", 0);
+        this.weapon = new Weapon("Desarmado", 0, "", 0);
     }
 
     public void unequipArmor(Armor armor){
-        this.armor = new Armor("Nada", 0, "Nada", 0);
+        this.armor = new Armor("Desnudo", 0, "", 0);
     }
 
     public void curar(Potion potion) {

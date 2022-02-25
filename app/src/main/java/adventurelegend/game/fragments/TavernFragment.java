@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import adventurelegend.game.R;
-import adventurelegend.game.databinding.FragmentTownBinding;
+import adventurelegend.game.databinding.FragmentTavernBinding;
 
-public class TownFragment extends Fragment {
+public class TavernFragment extends Fragment {
 
-    private FragmentTownBinding binding;
+    private FragmentTavernBinding binding;
     private NavController navController;
 
     @Override
@@ -27,7 +27,7 @@ public class TownFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentTownBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentTavernBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -35,35 +35,6 @@ public class TownFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
-
-        // TAVERN
-        binding.tavernButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_global_tavernFragment);
-            }
-        });
-        // FORGE
-        binding.forgeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_global_forgeFragment);
-            }
-        });
-        // SHOP
-        binding.shopButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_global_shopFragment);
-            }
-        });
-        // CHURCH
-        binding.churchButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_global_churchFragment);
-            }
-        });
 
         // PROFILE
         binding.profileButton.setOnClickListener(new View.OnClickListener() {
@@ -97,7 +68,7 @@ public class TownFragment extends Fragment {
         binding.returnButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_global_mapFragment);
+                navController.navigate(R.id.action_global_townFragment);
             }
         });
     }
