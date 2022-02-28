@@ -1,6 +1,13 @@
 package adventurelegend.game.objetcs;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity
 public class Player {
+    @PrimaryKey(autoGenerate = true)
+    int id;
+
     private int nivel;
     private String nombre;
     private int vida, actualVida;
@@ -10,22 +17,24 @@ public class Player {
     private Inventory inventory;
     private Weapon weapon;
     private Armor armor;
+    private Map map;
 
-    public Player(int nivel, String nombre, int vida, int actualVida, int mana, int actualMana, int ataque, int defensa, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
-        this.nivel = nivel;
+    public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
+        this.nivel = 1;
         this.nombre = nombre;
-        this.vida = vida;
-        this.actualVida = actualVida;
-        this.mana = mana;
-        this.actualMana = actualMana;
-        this.ataque = ataque;
-        this.defensa = defensa;
+        this.vida = 20 + constitucion;
+        this.actualVida = vida;
+        this.mana = 5 + inteligencia;
+        this.actualMana = mana;
+        this.ataque = 5;
+        this.defensa = 3;
         this.fuerza = fuerza;
         this.destreza = destreza;
         this.inteligencia = inteligencia;
         this.constitucion = constitucion;
         this.suerte = suerte;
         this.carisma = carisma;
+        this.map = new Map();
     }
 
     public void levelUp(int fuerzaUp, int destrezaUp, int inteligenciaUp, int constitucionUp, int suerteUp, int carismaUp) {
@@ -196,5 +205,33 @@ public class Player {
 
     public void setCarisma(int carisma) {
         this.carisma = carisma;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
+    }
+
+    public void setArmor(Armor armor) {
+        this.armor = armor;
     }
 }

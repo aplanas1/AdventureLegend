@@ -10,13 +10,16 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="170dp"
         android:background="#BF633C20"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_behavior="@layout/viewholder_mapx"
+        tools:listitem="@layout/viewholder_mapx"
         app:layout_constraintBottom_toTopOf="@id/frameBottom"
         app:layout_constraintTop_toBottomOf="@+id/frameTop"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/viewholder_mapx" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/frameTop"

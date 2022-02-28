@@ -3,6 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_weapons.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_map.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_new_game.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_saves.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_mapx.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_mapy.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_pokemon.xml" value="0.358695652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27309782608695654" />
         <entry key="app/src/main/res/layout/fragment_church.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_combat.xml" value="0.32019927536231885" />

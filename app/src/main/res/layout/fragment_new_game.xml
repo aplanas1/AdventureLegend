@@ -11,51 +11,397 @@
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Adventure Legend"
-        android:textColor="@color/black"
-        android:textSize="34sp"
-        app:layout_constraintBottom_toTopOf="@id/linear"
+        android:layout_marginTop="18dp"
+        android:text="Nuevo Jugador"
+        android:textColor="#000000"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <LinearLayout
-        android:id="@+id/linear"
+    <ImageButton
+        android:id="@+id/back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#00FFFFFF"
+        android:src="@drawable/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/stats"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/title">
 
-        <Button
-            android:id="@+id/newButton"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NEW" />
+            android:hint="Nombre"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="27dp" />
 
-        <Button
-            android:id="@+id/loadButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="LOAD" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <Button
-            android:id="@+id/optionsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="OPTIONS" />
 
-        <Button
-            android:id="@+id/quitButton"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/stats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/create"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/details">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/fuerza"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:text="QUIT" />
-    </LinearLayout>
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/constitucion"
+            app:layout_constraintEnd_toStartOf="@id/destreza"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/fuerzaDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="FUERZA"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/fuerzaText"/>
+            <Button
+                android:id="@+id/fuerzaMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/fuerzaText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fuerzaDesc"/>
+
+            <TextView
+                android:id="@+id/fuerzaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/fuerzaMenos"
+                app:layout_constraintEnd_toStartOf="@id/fuerzaMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fuerzaDesc"/>
+            <Button
+                android:id="@+id/fuerzaMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/fuerzaText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fuerzaDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/destreza"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/inteligencia"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fuerza"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/destrezaDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DESTREZA"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/destrezaText"/>
+            <Button
+                android:id="@+id/destrezaMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/destrezaText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+
+            <TextView
+                android:id="@+id/destrezaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/destrezaMenos"
+                app:layout_constraintEnd_toStartOf="@id/destrezaMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+            <Button
+                android:id="@+id/destrezaMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/destrezaText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constitucion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/suerte"
+            app:layout_constraintEnd_toStartOf="@id/inteligencia"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fuerza">
+
+            <TextView
+                android:id="@+id/constitucionDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONSTITUCION"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/constitucionText"/>
+            <Button
+                android:id="@+id/constitucionMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/constitucionText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constitucionDesc"/>
+
+            <TextView
+                android:id="@+id/constitucionText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/constitucionMenos"
+                app:layout_constraintEnd_toStartOf="@id/constitucionMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constitucionDesc"/>
+            <Button
+                android:id="@+id/constitucionMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/constitucionText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constitucionDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/inteligencia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/carisma"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/constitucion"
+            app:layout_constraintTop_toBottomOf="@id/destreza">
+
+            <TextView
+                android:id="@+id/inteligenciaDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="INTELIGENCIA"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/inteligenciaText"/>
+            <Button
+                android:id="@+id/inteligenciaMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/inteligenciaText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inteligenciaDesc"/>
+
+            <TextView
+                android:id="@+id/inteligenciaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/inteligenciaMenos"
+                app:layout_constraintEnd_toStartOf="@id/inteligenciaMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inteligenciaDesc"/>
+            <Button
+                android:id="@+id/inteligenciaMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/inteligenciaText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/inteligenciaDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/suerte"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/carisma"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/constitucion">
+
+            <TextView
+                android:id="@+id/suerteDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SUERTE"
+                android:textSize="24dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/suerteText"/>
+            <Button
+                android:id="@+id/suerteMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/suerteText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/suerteDesc"/>
+
+            <TextView
+                android:id="@+id/suerteText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/suerteMenos"
+                app:layout_constraintEnd_toStartOf="@id/suerteMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/suerteDesc"/>
+            <Button
+                android:id="@+id/suerteMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/suerteText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/suerteDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/carisma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/suerte"
+            app:layout_constraintTop_toBottomOf="@id/inteligencia">
+
+            <TextView
+                android:id="@+id/carismaDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:text="CARISMA"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/carismaText"/>
+            <Button
+                android:id="@+id/carismaMenos"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:textSize="24dp"
+                android:layout_marginEnd="20dp"
+                android:text="-"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/carismaText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carismaDesc"/>
+
+            <TextView
+                android:id="@+id/carismaText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:text="0"
+                app:layout_constraintStart_toEndOf="@id/carismaMenos"
+                app:layout_constraintEnd_toStartOf="@id/carismaMas"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carismaDesc"/>
+            <Button
+                android:id="@+id/carismaMas"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="+"
+                app:layout_constraintStart_toEndOf="@id/carismaText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/carismaDesc"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintTop_toBottomOf="@id/stats"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

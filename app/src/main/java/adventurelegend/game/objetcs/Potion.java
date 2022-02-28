@@ -1,8 +1,14 @@
 package adventurelegend.game.objetcs;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.ArrayList;
 
+@Entity
 public class Potion extends Item{
+    @PrimaryKey(autoGenerate = true)
+    int id;
 
     int curarVida;
     int curarMana;

@@ -2,65 +2,189 @@ package adventurelegend.game.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import adventurelegend.game.R;
+import adventurelegend.game.databinding.FragmentNewGameBinding;
+import adventurelegend.game.objetcs.Player;
+import adventurelegend.game.objetcs.PlayerViewModel;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link NewGameFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class NewGameFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private FragmentNewGameBinding binding;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private int totales = 15;
+    private int fuerza;
+    private int destreza;
+    private int constitucion;
+    private int inteligencia;
+    private int carisma;
+    private int suerte;
 
-    public NewGameFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment NewGameFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static NewGameFragment newInstance(String param1, String param2) {
-        NewGameFragment fragment = new NewGameFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return (binding = FragmentNewGameBinding.inflate(inflater, container, false)).getRoot();
+    }
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        PlayerViewModel playerViewModel = new ViewModelProvider(requireActivity()).get(PlayerViewModel.class);
+        NavController navController = Navigation.findNavController(view);
+
+        //FUERZA
+        binding.fuerzaMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    fuerza++;
+                    totales--;
+                    binding.fuerzaText.setText(fuerza);
+                }
+            }
+        });
+        binding.fuerzaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    fuerza--;
+                    totales++;
+                    binding.fuerzaText.setText(fuerza);
+                }
+            }
+        });
+
+        //DESTREZA
+        binding.destrezaMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    destreza++;
+                    totales--;
+                    binding.destrezaText.setText(destreza);
+                }
+            }
+        });
+        binding.destrezaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    destreza--;
+                    totales++;
+                    binding.destrezaText.setText(destreza);
+                }
+            }
+        });
+
+        //CONSTITUCION
+        binding.constitucionMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    constitucion++;
+                    totales--;
+                    binding.constitucionText.setText(constitucion);
+                }
+            }
+        });
+        binding.constitucionMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    constitucion--;
+                    totales++;
+                    binding.constitucionText.setText(constitucion);
+                }
+            }
+        });
+
+        //INTELIGENCIA
+        binding.inteligenciaMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    inteligencia++;
+                    totales--;
+                    binding.inteligenciaText.setText(inteligencia);
+                }
+            }
+        });
+        binding.inteligenciaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    inteligencia--;
+                    totales++;
+                    binding.inteligenciaText.setText(inteligencia);
+                }
+            }
+        });
+
+        //CARISMA
+        binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    carisma++;
+                    totales--;
+                    binding.carismaText.setText(carisma);
+                }
+            }
+        });
+        binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    carisma--;
+                    totales++;
+                    binding.carismaText.setText(carisma);
+                }
+            }
+        });
+
+        //SUERTE
+        binding.suerteMas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales > 0) {
+                    suerte++;
+                    totales--;
+                    binding.suerteText.setText(suerte);
+                }
+            }
+        });
+        binding.suerteMenos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (totales <= 15) {
+                    suerte--;
+                    totales++;
+                    binding.suerteText.setText(suerte);
+                }
+            }
+        });
+
+        binding.create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nombre = binding.nombre.getText().toString();
+
+                playerViewModel.insertar(new Player(nombre, fuerza, destreza, inteligencia, constitucion, suerte, carisma));
+
+                navController.navigate(R.id.action_global_mapFragment);
+            }
+        });
     }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_game, container, false);
-    }
 }
