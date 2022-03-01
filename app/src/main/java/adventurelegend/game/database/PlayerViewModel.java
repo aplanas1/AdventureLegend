@@ -1,4 +1,4 @@
-package adventurelegend.game.objetcs;
+package adventurelegend.game.database;
 
 import android.app.Application;
 
@@ -8,6 +8,8 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import java.util.List;
+
+import adventurelegend.game.objetcs.Player;
 
 public class PlayerViewModel extends AndroidViewModel  {
 

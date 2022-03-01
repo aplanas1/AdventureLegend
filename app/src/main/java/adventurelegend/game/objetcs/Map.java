@@ -5,6 +5,10 @@ import androidx.room.PrimaryKey;
 
 import java.lang.reflect.Array;
 
+
+//RECREAR MAP A CASILLAS X
+// Reducir en uno la cantidad de Arrays, osea que en lugar de una doble una unica array de casillas y, param mayor simplicidad a la hora de representarlas,
+// en casilla y estaran los datos de las casillas, mientras que casillas x solo servira para almacenar las casillas y
 @Entity
 public class Map {
     @PrimaryKey(autoGenerate = true)

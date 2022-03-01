@@ -1,4 +1,4 @@
-package adventurelegend.game.objetcs;
+package adventurelegend.game.database;
 
 import android.app.Application;
 
@@ -7,6 +7,8 @@ import androidx.lifecycle.LiveData;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+
+import adventurelegend.game.objetcs.Player;
 
 public class PlayerRepositorio {
 
@@ -19,7 +21,7 @@ public class PlayerRepositorio {
 
 
     LiveData<List<Player>> obtener(){
-        return playersDao.obtener();
+        return playersDao.obtenerPlayer();
     }
 
 
@@ -27,7 +29,7 @@ public class PlayerRepositorio {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                playersDao.insertar(player);
+                playersDao.insertarPlayer(player);
             }
         });
     }
@@ -36,7 +38,7 @@ public class PlayerRepositorio {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                playersDao.actualizar(player);
+                playersDao.actualizarPlayer(player);
             }
         });
     }
@@ -45,7 +47,7 @@ public class PlayerRepositorio {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                playersDao.eliminar(player);
+                playersDao.eliminarPlayer(player);
             }
         });
     }

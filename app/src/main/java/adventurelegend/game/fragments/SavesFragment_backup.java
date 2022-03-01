@@ -13,7 +13,7 @@ import androidx.navigation.Navigation;
 
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentSavesBinding;
-import adventurelegend.game.objetcs.PlayerViewModel;
+import adventurelegend.game.database.PlayerViewModel;
 
 public class SavesFragment_backup extends Fragment {
 

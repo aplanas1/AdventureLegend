@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentNewGameBinding;
 import adventurelegend.game.objetcs.Player;
-import adventurelegend.game.objetcs.PlayerViewModel;
+import adventurelegend.game.database.PlayerViewModel;
 
 
 public class NewGameFragment extends Fragment {

@@ -23,7 +23,7 @@ import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentSavesBinding;
 import adventurelegend.game.databinding.ViewholderSaveBinding;
 import adventurelegend.game.objetcs.Player;
-import adventurelegend.game.objetcs.PlayerViewModel;
+import adventurelegend.game.database.PlayerViewModel;
 
 import java.util.List;
 
