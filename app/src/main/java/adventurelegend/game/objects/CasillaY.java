@@ -1,14 +1,8 @@
-package adventurelegend.game.objetcs;
-
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+package adventurelegend.game.objects;
 
 import adventurelegend.game.R;
 
-@Entity
-public class Casilla {
-    @PrimaryKey(autoGenerate = true)
-    int id;
+public class CasillaY {
 
     private int propiedad;
     private String lugar;
@@ -16,7 +10,7 @@ public class Casilla {
     private int player_image;
     private int place_image;
 
-    public Casilla(int propiedad) {
+    public CasillaY(int propiedad) {
         this.propiedad = propiedad;
         if (propiedad == 1){
             this.lugar = "Pueblo";
@@ -61,14 +55,6 @@ public class Casilla {
 
     public void setPlace_image(int place_image) {
         this.place_image = place_image;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getPropiedad() {

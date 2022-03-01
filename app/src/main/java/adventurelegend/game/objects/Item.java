@@ -1,6 +1,4 @@
-package adventurelegend.game.objetcs;
-
-import java.util.ArrayList;
+package adventurelegend.game.objects;
 
 public class Item {
     private String nombre;

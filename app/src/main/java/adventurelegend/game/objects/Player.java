@@ -1,12 +1,6 @@
-package adventurelegend.game.objetcs;
+package adventurelegend.game.objects;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-@Entity
 public class Player {
-    @PrimaryKey(autoGenerate = true)
-    int id;
 
     private int nivel;
     private String nombre;
@@ -18,6 +12,7 @@ public class Player {
     private Weapon weapon;
     private Armor armor;
     private Map map;
+    private int dinero;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
         this.nivel = 1;
@@ -34,6 +29,9 @@ public class Player {
         this.constitucion = constitucion;
         this.suerte = suerte;
         this.carisma = carisma;
+        this.inventory = new Inventory();
+        this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
+        this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
         this.map = new Map();
     }
 
@@ -47,7 +45,7 @@ public class Player {
         this.carisma += 1 + carismaUp;
         this.ataque += 2;
         this.defensa += 2;
-        this.vida += 4 + constitucion;
+        this.vida += 4 + constitucion/2;
         this.actualVida = vida;
         this.mana += 2 + inteligencia;
         this.actualMana = mana;
@@ -62,11 +60,11 @@ public class Player {
     }
 
     public void unequipWeapon(Weapon weapon){
-        this.weapon = new Weapon("Desarmado", 0, "", 0);
+        this.weapon = new Weapon("",0,"",0);
     }
 
     public void unequipArmor(Armor armor){
-        this.armor = new Armor("Desnudo", 0, "", 0);
+        this.armor = new Armor("",0,"",0);
     }
 
     public void curar(Potion potion) {
@@ -215,14 +213,6 @@ public class Player {
         this.map = map;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
@@ -233,5 +223,13 @@ public class Player {
 
     public void setArmor(Armor armor) {
         this.armor = armor;
+    }
+
+    public int getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(int dinero) {
+        this.dinero = dinero;
     }
 }

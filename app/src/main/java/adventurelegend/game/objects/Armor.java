@@ -1,14 +1,6 @@
-package adventurelegend.game.objetcs;
+package adventurelegend.game.objects;
 
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
-
-import java.util.ArrayList;
-
-@Entity
 public class Armor extends Item{
-    @PrimaryKey(autoGenerate = true)
-    int id;
 
     private int defensa;
 
@@ -23,13 +15,5 @@ public class Armor extends Item{
 
     public void setDefensa(int defensa) {
         this.defensa = defensa;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

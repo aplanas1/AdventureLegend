@@ -12,8 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Objects;
+
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentMapBinding;
+import adventurelegend.game.GlobalPlayer;
 
 public class MapFragment extends Fragment {
 
@@ -35,6 +38,13 @@ public class MapFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         navController = Navigation.findNavController(view);
+
+        binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualVida() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getVida());
+        binding.mana.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualMana() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMana());
+        binding.goldText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getDinero());
+        binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
+        binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+
 
         // PROFILE
         binding.profileButton.setOnClickListener(new View.OnClickListener() {

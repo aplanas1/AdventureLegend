@@ -1,21 +1,20 @@
-package adventurelegend.game.objetcs;
-
-import androidx.room.Entity;
-import androidx.room.PrimaryKey;
+package adventurelegend.game.objects;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@Entity
 public class Inventory {
-    @PrimaryKey(autoGenerate = true)
-    int id;
 
-    ArrayList<Weapon> weapons = new ArrayList<>();
-    ArrayList<Armor> armors = new ArrayList<>();
-    ArrayList<Potion> potions = new ArrayList<>();
-    ArrayList<Special> specials = new ArrayList<>();
+    List<Weapon> weapons;
+    List<Armor> armors;
+    List<Potion> potions;
+    List<Special> specials;
 
     public Inventory() {
+        this.weapons = new ArrayList<>();
+        this.armors = new ArrayList<>();
+        this.potions = new ArrayList<>();
+        this.specials = new ArrayList<>();
     }
 
     public void addWeapon(Weapon weapon){
@@ -29,14 +28,6 @@ public class Inventory {
     }
     public void addSpecial(Special special){
         this.specials.add(special);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public void setWeapons(ArrayList<Weapon> weapons) {
@@ -55,19 +46,19 @@ public class Inventory {
         this.specials = specials;
     }
 
-    public ArrayList<Weapon> getWeapons() {
+    public List<Weapon> getWeapons() {
         return weapons;
     }
 
-    public ArrayList<Armor> getArmors() {
+    public List<Armor> getArmors() {
         return armors;
     }
 
-    public ArrayList<Potion> getPotions() {
+    public List<Potion> getPotions() {
         return potions;
     }
 
-    public ArrayList<Special> getSpecials() {
+    public List<Special> getSpecials() {
         return specials;
     }
 }

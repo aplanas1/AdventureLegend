@@ -1,4 +1,4 @@
-package adventurelegend.game.objetcs;
+package adventurelegend.game.objects;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,7 +14,7 @@ import adventurelegend.game.R;
 
 public class CasillaRecyclerViewAdapter extends RecyclerView.Adapter<CasillaRecyclerViewAdapter.MyViewHolder> {
 
-    public ArrayList<Casilla> casillaModelArrayList;
+    public ArrayList<CasillaY> casillaYModelArrayList;
     Context cxt;
 
     public static class MyViewHolder extends RecyclerView.ViewHolder{
@@ -28,9 +28,9 @@ public class CasillaRecyclerViewAdapter extends RecyclerView.Adapter<CasillaRecy
         }
     }
 
-    public CasillaRecyclerViewAdapter(ArrayList<Casilla> arrayList, Context mContext) {
+    public CasillaRecyclerViewAdapter(ArrayList<CasillaY> arrayList, Context mContext) {
         this.cxt = mContext;
-        this.casillaModelArrayList = arrayList;
+        this.casillaYModelArrayList = arrayList;
     }
 
     @Override
@@ -41,7 +41,7 @@ public class CasillaRecyclerViewAdapter extends RecyclerView.Adapter<CasillaRecy
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Casilla currentItem = casillaModelArrayList.get(position);
+        CasillaY currentItem = casillaYModelArrayList.get(position);
         holder.place.setImageResource(currentItem.getPlace_image());
         holder.player.setImageResource(currentItem.getPlayer_image());
 
@@ -49,7 +49,7 @@ public class CasillaRecyclerViewAdapter extends RecyclerView.Adapter<CasillaRecy
 
     @Override
     public int getItemCount() {
-        return casillaModelArrayList.size();
+        return casillaYModelArrayList.size();
     }
 
 }

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
@@ -13,10 +12,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentNewGameBinding;
-import adventurelegend.game.objetcs.Player;
-import adventurelegend.game.database.PlayerViewModel;
+import adventurelegend.game.objects.CasillaRecyclerViewAdapter;
+import adventurelegend.game.objects.Player;
 
 
 public class NewGameFragment extends Fragment {
@@ -24,13 +24,12 @@ public class NewGameFragment extends Fragment {
     private FragmentNewGameBinding binding;
 
     private int totales = 15;
-    private int fuerza;
-    private int destreza;
-    private int constitucion;
-    private int inteligencia;
-    private int carisma;
-    private int suerte;
-
+    private int fuerza = 0;
+    private int destreza = 0;
+    private int constitucion = 0;
+    private int inteligencia = 0;
+    private int carisma = 0;
+    private int suerte = 0;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -40,7 +39,6 @@ public class NewGameFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        PlayerViewModel playerViewModel = new ViewModelProvider(requireActivity()).get(PlayerViewModel.class);
         NavController navController = Navigation.findNavController(view);
 
         //FUERZA
@@ -50,17 +48,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     fuerza++;
                     totales--;
-                    binding.fuerzaText.setText(fuerza);
+                    binding.fuerzaText.setText("" + fuerza);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.fuerzaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     fuerza--;
                     totales++;
-                    binding.fuerzaText.setText(fuerza);
+                    binding.fuerzaText.setText("" + fuerza);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -72,17 +72,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     destreza++;
                     totales--;
-                    binding.destrezaText.setText(destreza);
+                    binding.destrezaText.setText("" + destreza);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.destrezaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     destreza--;
                     totales++;
-                    binding.destrezaText.setText(destreza);
+                    binding.destrezaText.setText("" + destreza);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -94,17 +96,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     constitucion++;
                     totales--;
-                    binding.constitucionText.setText(constitucion);
+                    binding.constitucionText.setText("" + constitucion);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.constitucionMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     constitucion--;
                     totales++;
-                    binding.constitucionText.setText(constitucion);
+                    binding.constitucionText.setText("" + constitucion);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -116,17 +120,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     inteligencia++;
                     totales--;
-                    binding.inteligenciaText.setText(inteligencia);
+                    binding.inteligenciaText.setText("" + inteligencia);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.inteligenciaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     inteligencia--;
                     totales++;
-                    binding.inteligenciaText.setText(inteligencia);
+                    binding.inteligenciaText.setText("" + inteligencia);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -138,17 +144,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     carisma++;
                     totales--;
-                    binding.carismaText.setText(carisma);
+                    binding.carismaText.setText("" + carisma);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     carisma--;
                     totales++;
-                    binding.carismaText.setText(carisma);
+                    binding.carismaText.setText("" + carisma);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -160,17 +168,19 @@ public class NewGameFragment extends Fragment {
                 if (totales > 0) {
                     suerte++;
                     totales--;
-                    binding.suerteText.setText(suerte);
+                    binding.suerteText.setText("" + suerte);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
         binding.suerteMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales <= 15) {
+                if (totales < 15) {
                     suerte--;
                     totales++;
-                    binding.suerteText.setText(suerte);
+                    binding.suerteText.setText("" + suerte);
+                    binding.totalesText.setText("" + totales);
                 }
             }
         });
@@ -180,7 +190,7 @@ public class NewGameFragment extends Fragment {
             public void onClick(View v) {
                 String nombre = binding.nombre.getText().toString();
 
-                playerViewModel.insertar(new Player(nombre, fuerza, destreza, inteligencia, constitucion, suerte, carisma));
+                ((GlobalPlayer)getActivity().getApplication()).setPlayer(new Player(nombre,fuerza,destreza,inteligencia,constitucion,suerte,carisma));
 
                 navController.navigate(R.id.action_global_mapFragment);
             }

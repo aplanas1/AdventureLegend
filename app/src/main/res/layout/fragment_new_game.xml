@@ -66,6 +66,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/details">
 
+        <TextView
+            android:id="@+id/totalesDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="28dp"
+            android:text="PUNTOS TOTALES:"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/totalesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="28dp"
+            android:text="15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalesDesc"/>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/fuerza"
             android:layout_width="wrap_content"
@@ -74,7 +94,7 @@
             app:layout_constraintBottom_toTopOf="@id/constitucion"
             app:layout_constraintEnd_toStartOf="@id/destreza"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/totalesText">
 
             <TextView
                 android:id="@+id/fuerzaDesc"
@@ -82,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:text="FUERZA"
                 android:textSize="24dp"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/fuerzaText"/>
@@ -128,7 +148,7 @@
             app:layout_constraintBottom_toTopOf="@id/inteligencia"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/fuerza"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/totalesText">
 
             <TextView
                 android:id="@+id/destrezaDesc"
@@ -136,41 +156,43 @@
                 android:layout_height="wrap_content"
                 android:text="DESTREZA"
                 android:textSize="24dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/destrezaText"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/destrezaText"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <Button
                 android:id="@+id/destrezaMenos"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="20dp"
                 android:text="-"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/destrezaText"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+                app:layout_constraintEnd_toStartOf="@id/destrezaText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc" />
 
             <TextView
                 android:id="@+id/destrezaText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
                 android:text="0"
-                app:layout_constraintStart_toEndOf="@id/destrezaMenos"
-                app:layout_constraintEnd_toStartOf="@id/destrezaMas"
+                android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+                app:layout_constraintEnd_toStartOf="@id/destrezaMas"
+                app:layout_constraintStart_toEndOf="@id/destrezaMenos"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc" />
+
             <Button
                 android:id="@+id/destrezaMas"
                 android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:text="+"
-                app:layout_constraintStart_toEndOf="@id/destrezaText"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/destrezaDesc"/>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/destrezaText"
+                app:layout_constraintTop_toBottomOf="@id/destrezaDesc" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -397,7 +419,7 @@
         android:id="@+id/create"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:text="Crear JUgador"
         app:layout_constraintTop_toBottomOf="@id/stats"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
