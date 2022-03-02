@@ -13,6 +13,9 @@ public class Player {
     private Armor armor;
     private Map map;
     private int dinero;
+    public int casillaX;
+    public int casillaY;
+    public String lugar;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
         this.nivel = 1;
@@ -33,6 +36,7 @@ public class Player {
         this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
         this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
         this.map = new Map();
+        whereI();
     }
 
     public void levelUp(int fuerzaUp, int destrezaUp, int inteligenciaUp, int constitucionUp, int suerteUp, int carismaUp) {
@@ -231,5 +235,73 @@ public class Player {
 
     public void setDinero(int dinero) {
         this.dinero = dinero;
+    }
+
+    public void whereI(){
+        setCasillaX(map.getPlayer(true));
+        setCasillaY(map.getPlayer(false));
+        setLugar(map.getPlayerPlace(casillaX, casillaY));
+    }
+
+    public int getCasillaX() {
+        return casillaX;
+    }
+
+    public void setCasillaX(int casillaX) {
+        this.casillaX = casillaX;
+    }
+
+    public int getCasillaY() {
+        return casillaY;
+    }
+
+    public void setCasillaY(int casillaY) {
+        this.casillaY = casillaY;
+    }
+
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public void moveUp(){
+        if (casillaY < map.casillas.length - 1) {
+            map.casillas[casillaX][casillaY].desetPlayer();
+            casillaY++;
+            map.casillas[casillaX][casillaY].setPlayer();
+            setLugar(map.getPlayerPlace(casillaX, casillaY));
+            map.nextTurn();
+        }
+
+    }
+    public void moveDown(){
+        if (casillaY > 0) {
+            map.casillas[casillaX][casillaY].desetPlayer();
+            casillaY--;
+            map.casillas[casillaX][casillaY].setPlayer();
+            setLugar(map.getPlayerPlace(casillaX, casillaY));
+            map.nextTurn();
+        }
+    }
+    public void moveRight(){
+        if (casillaX < map.casillas.length - 1) {
+            map.casillas[casillaX][casillaY].desetPlayer();
+            casillaX++;
+            map.casillas[casillaX][casillaY].setPlayer();
+            setLugar(map.getPlayerPlace(casillaX, casillaY));
+            map.nextTurn();
+        }
+    }
+    public void moveLeft(){
+        if (casillaX > 0){
+            map.casillas[casillaX][casillaY].desetPlayer();
+            casillaX--;
+            map.casillas[casillaX][casillaY].setPlayer();
+            setLugar(map.getPlayerPlace(casillaX, casillaY));
+            map.nextTurn();
+        }
     }
 }

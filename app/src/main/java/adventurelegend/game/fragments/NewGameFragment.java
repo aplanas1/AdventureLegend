@@ -41,7 +41,10 @@ public class NewGameFragment extends Fragment {
 
         NavController navController = Navigation.findNavController(view);
 
+        binding.totalesText.setText("" + totales);
+
         //FUERZA
+        binding.fuerzaText.setText("" + fuerza);
         binding.fuerzaMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,7 +59,7 @@ public class NewGameFragment extends Fragment {
         binding.fuerzaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (fuerza > 0) {
                     fuerza--;
                     totales++;
                     binding.fuerzaText.setText("" + fuerza);
@@ -66,6 +69,7 @@ public class NewGameFragment extends Fragment {
         });
 
         //DESTREZA
+        binding.destrezaText.setText("" + destreza);
         binding.destrezaMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -80,7 +84,7 @@ public class NewGameFragment extends Fragment {
         binding.destrezaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (destreza > 0) {
                     destreza--;
                     totales++;
                     binding.destrezaText.setText("" + destreza);
@@ -90,6 +94,7 @@ public class NewGameFragment extends Fragment {
         });
 
         //CONSTITUCION
+        binding.constitucionText.setText("" + constitucion);
         binding.constitucionMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -104,7 +109,7 @@ public class NewGameFragment extends Fragment {
         binding.constitucionMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (constitucion > 0) {
                     constitucion--;
                     totales++;
                     binding.constitucionText.setText("" + constitucion);
@@ -114,6 +119,7 @@ public class NewGameFragment extends Fragment {
         });
 
         //INTELIGENCIA
+        binding.inteligenciaText.setText("" + inteligencia);
         binding.inteligenciaMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -128,7 +134,7 @@ public class NewGameFragment extends Fragment {
         binding.inteligenciaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (inteligencia > 0) {
                     inteligencia--;
                     totales++;
                     binding.inteligenciaText.setText("" + inteligencia);
@@ -138,6 +144,7 @@ public class NewGameFragment extends Fragment {
         });
 
         //CARISMA
+        binding.carismaText.setText("" + carisma);
         binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -152,7 +159,7 @@ public class NewGameFragment extends Fragment {
         binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (carisma > 0) {
                     carisma--;
                     totales++;
                     binding.carismaText.setText("" + carisma);
@@ -162,6 +169,7 @@ public class NewGameFragment extends Fragment {
         });
 
         //SUERTE
+        binding.suerteText.setText("" + suerte);
         binding.suerteMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -176,7 +184,7 @@ public class NewGameFragment extends Fragment {
         binding.suerteMenos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (totales < 15) {
+                if (suerte > 0) {
                     suerte--;
                     totales++;
                     binding.suerteText.setText("" + suerte);

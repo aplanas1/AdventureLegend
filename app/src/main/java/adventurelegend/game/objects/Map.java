@@ -1,29 +1,50 @@
 package adventurelegend.game.objects;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Map {
 
-    public List<CasillaX> casillaXS;
+    public Casilla[][] casillas;
     private int turn;
     private boolean day;
 
     public Map() {
-        this.casillaXS = new ArrayList<>();
-        for (int i = 0; i < 98; i++) {
-            casillaXS.add(new CasillaX());
+        this.casillas = new Casilla[99][99];
+        for (int i = 0; i < casillas.length; i++) {
+            for (int j = 0; j < casillas.length; j++) {
+                int random = (int) (Math.random() * (100 - 1) + 1);
+                int valor;
+                if (random > 85) {
+                    valor = 1;
+                } else if (random > 60) {
+                    valor = 2;
+                } else if (random > 45) {
+                    valor = 3;
+                } else {
+                    valor = 0;
+                }
+                casillas[i][j] = new Casilla(valor);
+            }
         }
-        int turn = 1;
+        turn = 1;
         day = true;
+        casillas[casillas.length/2][casillas.length/2].setPlayer();
+        for (int i = 0; i < casillas.length; i++) {
+            for (int j = 0; j < casillas.length; j++) {
+                System.out.print(casillas[i][j]);
+            }
+            System.out.println();
+        }
     }
 
-    public List<CasillaX> getCasillaXS() {
-        return casillaXS;
+    public Casilla[][] getCasillas() {
+        return casillas;
     }
 
-    public void setCasillaXS(List<CasillaX> casillaXS) {
-        this.casillaXS = casillaXS;
+    public Casilla getCasilla(int i, int j) {
+        return casillas[i][j];
+    }
+
+    public void setCasillas(Casilla[][] casillas) {
+        this.casillas = casillas;
     }
 
     public int getTurn() {
@@ -35,7 +56,7 @@ public class Map {
     }
 
     public void nextTurn() {
-        if (this.turn > 5) {
+        if (this.turn >= 5) {
             this.turn = 1;
             if (isDay()){
                 setNight();
@@ -66,9 +87,26 @@ public class Map {
         this.day = false;
     }
 
-    public void getPlayer(){
-        for (CasillaX casillaX: casillaXS) {
-            casillaX.getPlayer();
+    public int getPlayer(boolean x){
+        for (int i = 0; i < casillas.length; i++) {
+            for (int j = 0; j < casillas.length; j++) {
+                if (casillas[i][j].isPlayer()){
+                    if (x){
+                        return i;
+                    } else {
+                        return j;
+                    }
+                }
+            }
         }
+        return -1;
+    }
+
+    public String getPlayerPlace(int x, int y){
+        return casillas[x][y].getLugar();
+    }
+
+    public int getCasillaImage(int x, int y){
+        return casillas[x][y].getPlace_image();
     }
 }

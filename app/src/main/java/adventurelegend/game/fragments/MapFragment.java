@@ -11,6 +11,11 @@ import androidx.navigation.Navigation;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.Objects;
 
@@ -39,12 +44,65 @@ public class MapFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualVida() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getVida());
+        binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
         binding.mana.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualMana() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMana());
-        binding.goldText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getDinero());
+        binding.goldText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getDinero() + " gold");
         binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
         binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+        binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
+        setMap();
 
+
+
+
+        // UP
+        binding.arrowUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).getPlayer().moveUp();
+                binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
+                binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+                binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
+                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+                updateMap();
+            }
+        });
+        // DOWN
+        binding.arrowDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).getPlayer().moveDown();
+                binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
+                binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+                binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
+                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+                updateMap();
+            }
+        });
+        // RIGHT
+        binding.arrowRight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).getPlayer().moveRight();
+                binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
+                binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+                binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
+                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+                updateMap();
+            }
+        });
+        // LEFT
+        binding.arrowLeft.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).getPlayer().moveLeft();
+                binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
+                binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
+                binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
+                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+                updateMap();
+            }
+        });
 
         // PROFILE
         binding.profileButton.setOnClickListener(new View.OnClickListener() {
@@ -81,5 +139,46 @@ public class MapFragment extends Fragment {
                 navController.navigate(R.id.action_global_townFragment);
             }
         });
+    }
+
+    public void setMap(){
+        int minX = ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() - 2;
+        int maxX = ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + 2;
+        int minY = ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY() - 2;
+        int maxY = ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY() + 2;
+        TableLayout stk = binding.mapView;
+
+        for (int i = minX; i <= maxX; i++) {
+            TableRow tbrow = new TableRow(getActivity());
+            for (int j = minY; j <= maxY; j++) {
+                ImageView tv = new ImageView(getActivity());
+                if (i >= 0 && i < ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().casillas.length) {
+                    if (j >= 0 && j < ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().casillas.length) {
+                        tv.setImageResource(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getCasillaImage(i,j));
+                    } else {
+                        tv.setImageResource(R.drawable.backpack);
+                    }
+                } else {
+                    tv.setImageResource(R.drawable.backpack);
+                }
+                tbrow.addView(tv);
+            }
+            stk.addView(tbrow);
+        }
+
+    }
+
+    public void clearMap(){
+        TableLayout stk = binding.mapView;
+        int count = stk.getChildCount();
+        for (int i = 0; i < count; i++) {
+            View child = stk.getChildAt(i);
+            if (child instanceof TableRow) ((ViewGroup) child).removeAllViews();
+        }
+    }
+
+    public void updateMap(){
+        clearMap();
+        setMap();
     }
 }

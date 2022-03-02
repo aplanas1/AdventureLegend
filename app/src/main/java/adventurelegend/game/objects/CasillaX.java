@@ -5,11 +5,11 @@ import java.util.List;
 
 public class CasillaX {
 
-    public List<CasillaY> casillaYS;
+    public CasillaY[] casillaYS;
 
     public CasillaX() {
-        this.casillaYS = new ArrayList<>();
-        for (int i = 0; i < 98; i++) {
+        this.casillaYS = new CasillaY[98];
+        for (int i = 0; i < casillaYS.length; i++) {
             int random = (int) (Math.random() * (100 - 1) + 1);
             int valor;
             if (random > 85) {
@@ -21,17 +21,16 @@ public class CasillaX {
             } else {
                 valor = 0;
             }
-            casillaYS.add(new CasillaY(valor));
+            casillaYS[i] = new CasillaY(valor);
         }
     }
     
     public int getPlayer(){
-        for (CasillaY casillaY: casillaYS) {
-            if (casillaY.isPlayer()) {
-                return casillaYS.indexOf(casillaY);
+        for (int i = 0; i < casillaYS.length; i++) {
+            if (casillaYS[i].isPlayer()){
+                return i;
             }
         }
-
         return -1;
     }
 }
