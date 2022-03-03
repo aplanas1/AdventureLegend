@@ -3,6 +3,8 @@ package adventurelegend.game.objects;
 import java.util.ArrayList;
 import java.util.List;
 
+import adventurelegend.game.R;
+
 public class Player {
 
     private int nivel;
@@ -22,33 +24,62 @@ public class Player {
     private List<Skill> skills;
     private int xp;
     private int xpNext;
+    private Enemy enemy;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
-        this.nivel = 1;
-        this.nombre = nombre;
-        this.vida = 20 + constitucion;
-        this.actualVida = vida;
-        this.mana = 5 + inteligencia;
-        this.actualMana = mana;
-        this.ataque = 5;
-        this.defensa = 3;
-        this.fuerza = fuerza;
-        this.destreza = destreza;
-        this.inteligencia = inteligencia;
-        this.constitucion = constitucion;
-        this.suerte = suerte;
-        this.carisma = carisma;
-        this.xp = 0;
-        this.xpNext = 50;
+        if (nombre.equals("cheater")) {
+            this.nivel = 99;
+            this.nombre = nombre;
+            this.vida = 99;
+            this.actualVida = vida;
+            this.mana = 99;
+            this.actualMana = mana;
+            this.ataque = 99;
+            this.defensa = 99;
+            this.fuerza = 99;
+            this.destreza = 99;
+            this.inteligencia = 99;
+            this.constitucion = 99;
+            this.suerte = 99;
+            this.carisma = 99;
+            this.xp = 0;
+            this.xpNext = 50;
+            this.armor = new Armor("Armadura legendaria del dragón antiguo", 999, "Armadura legendaria", 999);
+            this.weapon = new Weapon("Espada legendario del dragón antiguo", 999, "Espada legendaria", 999);
+        } else {
+            this.nivel = 1;
+            this.nombre = nombre;
+            this.vida = 20 + constitucion;
+            this.actualVida = vida;
+            this.mana = 5 + inteligencia;
+            this.actualMana = mana;
+            this.ataque = 5;
+            this.defensa = 3;
+            this.fuerza = fuerza;
+            this.destreza = destreza;
+            this.inteligencia = inteligencia;
+            this.constitucion = constitucion;
+            this.suerte = suerte;
+            this.carisma = carisma;
+            this.xp = 0;
+            this.xpNext = 50;
+            this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
+            this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
+        }
         this.inventory = new Inventory();
-        this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
-        this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
         this.map = new Map();
         whereI();
         skills = new ArrayList<>();
-        skills.add(new Skill("Slash" ,4,true,true,false, 2));
-        skills.add(new Skill("Fireball" ,6,false,false,true, 3));
-        skills.add(new Skill("Flamberge" ,8,true,true,true, 5));
+        skills.add(new Skill("Slash", 4, true, true, false, 2));
+        skills.add(new Skill("Fireball", 6, false, false, true, 3));
+        skills.add(new Skill("Ice", 6, false, false, true, 3));
+        skills.add(new Skill("Flamberge", 8, true, true, true, 5));
+        inventory.addArmor(armor);
+        inventory.addWeapon(weapon);
+        inventory.addPotion(new Potion("Pocion de vida", 5, "Pocion que sana vida", 10, 0));
+        inventory.addPotion(new Potion("Pocion de megavida", 5, "Pocion que sana vida", 10, 0));
+        inventory.addPotion(new Potion("Pocion de mana", 5, "Pocion que sana mana", 0, 10));
+        inventory.addPotion(new Potion("Pocion total", 500, "Pocion que cura por completo", 100, 100));
     }
 
     public void levelUp() {
@@ -160,7 +191,7 @@ public class Player {
     }
 
     public int getAtaque() {
-        return ataque + weapon.getDamage();
+        return ataque + weapon.getDamage() + fuerza;
     }
 
     public void setAtaque(int ataque) {
@@ -328,6 +359,26 @@ public class Player {
     public List<Skill> getSkills() {
         return skills;
     }
+    public boolean isPosible(String name){
+        for (Skill skill: skills) {
+            if (skill.getName().equals(name)) {
+                if (actualMana - skill.getCost() >= 0) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public int getSkillDamage(String name) {
+
+        for (Skill skill: skills) {
+            if (skill.getName().equals(name)) {
+                actualMana -= skill.getCost();
+                return skill.getDamage(fuerza,destreza,inteligencia);
+            }
+        }
+        return 0;
+    }
 
     public void setSkills(List<Skill> skills) {
         this.skills = skills;
@@ -343,7 +394,7 @@ public class Player {
 
     public void addXp(int points) {
         this.xp += points;
-        if (xp>= xpNext) {
+        if (xp >= xpNext) {
             levelUp();
         }
     }
@@ -354,5 +405,26 @@ public class Player {
 
     public void setXpNext(int xpNext) {
         this.xpNext = xpNext;
+    }
+
+    public Enemy getEnemy() {
+        return enemy;
+    }
+
+    public void setEnemy(int dificultad) {
+        if (dificultad == 1) {
+            this.enemy = new Enemy("Lobo", R.drawable.star1,10,5,0, 20);
+        }
+        if (dificultad == 2) {
+            this.enemy = new Enemy("Orco", R.drawable.sword1,20,10,4, 50);
+        }
+        if (dificultad == 3) {
+            this.enemy = new Enemy("Dragon", R.drawable.potion1,100,100,10, 500);
+        }
+
+    }
+
+    public void reciveDamage(int ap){
+        if (ap - defensa >= 0) this.actualVida -= ap - defensa;
     }
 }

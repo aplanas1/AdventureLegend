@@ -15,7 +15,6 @@ import android.view.ViewGroup;
 import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentNewGameBinding;
-import adventurelegend.game.objects.CasillaRecyclerViewAdapter;
 import adventurelegend.game.objects.Player;
 
 

@@ -106,5 +106,11 @@
         tools:layout="@layout/fragment_church" /><action android:id="@+id/action_global_tavernFragment" app:destination="@id/tavernFragment"/><action android:id="@+id/action_global_forgeFragment" app:destination="@id/forgeFragment"/><action android:id="@+id/action_global_shopFragment" app:destination="@id/shopFragment"/><action android:id="@+id/action_global_churchFragment" app:destination="@id/churchFragment"/>
     <action android:id="@+id/action_global_savesFragment" app:destination="@id/savesFragment" />
     <action android:id="@+id/action_global_newGameFragment" app:destination="@id/newGameFragment" />
-    <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment" />
-    ES</navigation>
+    <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment" /><action android:id="@+id/action_global_combatFragment" app:destination="@id/combatFragment"/>
+    <fragment
+        android:id="@+id/mesageFragment2"
+        android:name="adventurelegend.game.fragments.mesageFragment"
+        android:label="fragment_mesage"
+        tools:layout="@layout/fragment_mesage" />
+    ES
+</navigation>
