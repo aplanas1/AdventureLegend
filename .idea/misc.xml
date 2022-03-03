@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_church.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_combat.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_forge.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_weapons.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_map.xml" value="0.358695652173913" />
@@ -15,9 +16,10 @@
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_mapx.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_mapy.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_pokemon.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_weapon.xml" value="0.358695652173913" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.27309782608695654" />
         <entry key="app/src/main/res/layout/fragment_church.xml" value="0.35572916666666665" />
-        <entry key="app/src/main/res/layout/fragment_combat.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_combat.xml" value="0.32019927536231885" />
         <entry key="app/src/main/res/layout/fragment_forge.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.27309782608695654" />
         <entry key="app/src/main/res/layout/fragment_inventory.xml" value="0.32019927536231885" />
@@ -26,7 +28,6 @@
         <entry key="app/src/main/res/layout/fragment_inventory_special.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_inventory_weapons.xml" value="0.2726449275362319" />
         <entry key="app/src/main/res/layout/fragment_map.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_mesage.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_mostrar_elemento.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_new_game.xml" value="0.32019927536231885" />
         <entry key="app/src/main/res/layout/fragment_options.xml" value="0.35572916666666665" />
@@ -38,7 +39,6 @@
         <entry key="app/src/main/res/layout/fragment_skills.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_tabern.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/fragment_town.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/mesage_fragment.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/tab1a.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/viewholder_armor.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/viewholder_elemento.xml" value="0.35572916666666665" />

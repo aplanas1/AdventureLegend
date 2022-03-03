@@ -1,5 +1,6 @@
 package adventurelegend.game.fragments;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,11 +9,26 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.LiveData;
+import androidx.lifecycle.Observer;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
+import java.util.List;
+
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentInventoryWeaponsBinding;
+import adventurelegend.game.databinding.ViewholderWeaponBinding;
+import adventurelegend.game.objects.Weapon;
+import adventurelegend.game.objects.WeaponAdapter;
 
 public class InventoryWeaponsFragment extends Fragment {
 
@@ -63,5 +79,17 @@ public class InventoryWeaponsFragment extends Fragment {
                 navController.navigate(R.id.action_global_mapFragment);
             }
         });
+
+        WeaponAdapter adapter = new WeaponAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getWeapons());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+
+        /*WeaponAdapter weaponAdapter = new WeaponAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getWeapons());
+        binding.recyclerView.setAdapter(weaponAdapter);
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(weaponAdapter);
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));*/
+
     }
 }

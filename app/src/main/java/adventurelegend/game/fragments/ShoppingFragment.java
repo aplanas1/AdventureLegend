@@ -12,10 +12,10 @@ import adventurelegend.game.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link mesageFragment#newInstance} factory method to
+ * Use the {@link ShoppingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class mesageFragment extends Fragment {
+public class ShoppingFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class mesageFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public mesageFragment() {
+    public ShoppingFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class mesageFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment mesageFragment.
+     * @return A new instance of fragment shoppingFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static mesageFragment newInstance(String param1, String param2) {
-        mesageFragment fragment = new mesageFragment();
+    public static ShoppingFragment newInstance(String param1, String param2) {
+        ShoppingFragment fragment = new ShoppingFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,6 +61,6 @@ public class mesageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_mesage, container, false);
+        return inflater.inflate(R.layout.fragment_shopping, container, false);
     }
 }

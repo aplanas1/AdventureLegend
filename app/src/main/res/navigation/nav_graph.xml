@@ -109,8 +109,13 @@
     <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment" /><action android:id="@+id/action_global_combatFragment" app:destination="@id/combatFragment"/>
     <fragment
         android:id="@+id/mesageFragment2"
-        android:name="adventurelegend.game.fragments.mesageFragment"
+        android:name="adventurelegend.game.fragments.MesageFragment"
         android:label="fragment_mesage"
         tools:layout="@layout/fragment_mesage" />
+    <fragment
+        android:id="@+id/shoppingFragment"
+        android:name="adventurelegend.game.fragments.ShoppingFragment"
+        android:label="fragment_shopping"
+        tools:layout="@layout/fragment_shopping" />
     ES
 </navigation>

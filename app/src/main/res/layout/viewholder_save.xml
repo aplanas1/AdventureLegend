@@ -19,27 +19,27 @@
         android:layout_width="250dp"
         android:layout_height="match_parent"
         android:textSize="28sp"
-        app:layout_constraintBottom_toTopOf="@id/tipo2"
+        app:layout_constraintBottom_toTopOf="@id/precio"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintLeft_toRightOf="@id/imagen"
         app:layout_constraintRight_toRightOf="parent"/>
 
     <ImageView
-        android:id="@+id/tipo1"
+        android:id="@+id/ataque"
         android:layout_width="55dp"
         android:layout_height="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombre"
         app:layout_constraintLeft_toRightOf="@id/imagen"
-        app:layout_constraintRight_toLeftOf="@id/tipo2"/>
+        app:layout_constraintRight_toLeftOf="@id/precio"/>
 
     <ImageView
-        android:id="@+id/tipo2"
+        android:id="@+id/precio"
         android:layout_width="55dp"
         android:layout_height="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/nombre"
-        app:layout_constraintLeft_toRightOf="@id/tipo1"
+        app:layout_constraintLeft_toRightOf="@id/ataque"
         app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
