@@ -105,6 +105,9 @@ public class Map {
     public String getPlayerPlace(int x, int y){
         return casillas[x][y].getLugar();
     }
+    public int getCasillaPropiedad(int x, int y){
+        return casillas[x][y].getPropiedad();
+    }
 
     public int getCasillaImage(int x, int y){
         return casillas[x][y].getPlace_image();

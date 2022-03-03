@@ -44,16 +44,13 @@ public class MapFragment extends Fragment {
 
         navController = Navigation.findNavController(view);
 
-        binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+        binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualVida() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getVida());
         binding.mana.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualMana() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMana());
         binding.goldText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getDinero() + " gold");
         binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
         binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
         setMap();
-
-
-
 
         // UP
         binding.arrowUp.setOnClickListener(new View.OnClickListener() {
@@ -63,7 +60,6 @@ public class MapFragment extends Fragment {
                 binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
                 binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
                 binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
-                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
                 updateMap();
             }
         });
@@ -75,7 +71,6 @@ public class MapFragment extends Fragment {
                 binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
                 binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
                 binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
-                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
                 updateMap();
             }
         });
@@ -87,7 +82,6 @@ public class MapFragment extends Fragment {
                 binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
                 binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
                 binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
-                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
                 updateMap();
             }
         });
@@ -99,7 +93,6 @@ public class MapFragment extends Fragment {
                 binding.turnText.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getTurn() + " / 5");
                 binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
                 binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
-                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
                 updateMap();
             }
         });
@@ -136,7 +129,9 @@ public class MapFragment extends Fragment {
         binding.button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_global_townFragment);
+                if (locateMenu() == 1) {
+                    navController.navigate(R.id.action_global_townFragment);
+                }
             }
         });
     }
@@ -180,5 +175,17 @@ public class MapFragment extends Fragment {
     public void updateMap(){
         clearMap();
         setMap();
+    }
+
+    public int locateMenu(){
+        int propiedad = ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getCasillaPropiedad(((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaX(),((GlobalPlayer)getActivity().getApplication()).getPlayer().getCasillaY());
+        if (propiedad == 1) {
+            return 1;
+        } else if (propiedad == 2) {
+            return 2;
+        } else if (propiedad == 3) {
+            return 3;
+        }
+        return 0;
     }
 }

@@ -47,14 +47,14 @@ public class HomeFragment extends Fragment {
         binding.newButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_homeFragment_to_newGameFragment);
+                navController.navigate(R.id.action_global_newGameFragment);
             }
         });
         // LOAD SAVE
         binding.loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_homeFragment_to_savesFragment);
+                navController.navigate(R.id.action_global_savesFragment);
             }
         });
         // OPTIONS

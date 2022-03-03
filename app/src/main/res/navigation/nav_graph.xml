@@ -9,14 +9,7 @@
         android:id="@+id/homeFragment"
         android:name="adventurelegend.game.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_savesFragment"
-            app:destination="@id/savesFragment" />
-        <action
-            android:id="@+id/action_homeFragment_to_newGameFragment"
-            app:destination="@id/newGameFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/savesFragment"
         android:name="adventurelegend.game.fragments.SavesFragment"
@@ -111,4 +104,7 @@
         android:name="adventurelegend.game.fragments.ChurchFragment"
         android:label="fragment_church"
         tools:layout="@layout/fragment_church" /><action android:id="@+id/action_global_tavernFragment" app:destination="@id/tavernFragment"/><action android:id="@+id/action_global_forgeFragment" app:destination="@id/forgeFragment"/><action android:id="@+id/action_global_shopFragment" app:destination="@id/shopFragment"/><action android:id="@+id/action_global_churchFragment" app:destination="@id/churchFragment"/>
+    <action android:id="@+id/action_global_savesFragment" app:destination="@id/savesFragment" />
+    <action android:id="@+id/action_global_newGameFragment" app:destination="@id/newGameFragment" />
+    <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment" />
     ES</navigation>

@@ -1,5 +1,8 @@
 package adventurelegend.game.objects;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
     private int nivel;
@@ -13,9 +16,12 @@ public class Player {
     private Armor armor;
     private Map map;
     private int dinero;
-    public int casillaX;
-    public int casillaY;
-    public String lugar;
+    private int casillaX;
+    private int casillaY;
+    private String lugar;
+    private List<Skill> skills;
+    private int xp;
+    private int xpNext;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
         this.nivel = 1;
@@ -32,27 +38,35 @@ public class Player {
         this.constitucion = constitucion;
         this.suerte = suerte;
         this.carisma = carisma;
+        this.xp = 0;
+        this.xpNext = 50;
         this.inventory = new Inventory();
         this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
         this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
         this.map = new Map();
         whereI();
+        skills = new ArrayList<>();
+        skills.add(new Skill("Slash" ,4,true,true,false, 2));
+        skills.add(new Skill("Fireball" ,6,false,false,true, 3));
+        skills.add(new Skill("Flamberge" ,8,true,true,true, 5));
     }
 
-    public void levelUp(int fuerzaUp, int destrezaUp, int inteligenciaUp, int constitucionUp, int suerteUp, int carismaUp) {
+    public void levelUp() {
         this.nivel++;
-        this.fuerza += 1 + fuerzaUp;
-        this.destreza += 1 + destrezaUp;
-        this.inteligencia += 1 + inteligenciaUp;
-        this.constitucion += 1 + constitucionUp;
-        this.suerte += 1 + suerteUp;
-        this.carisma += 1 + carismaUp;
+        this.fuerza += 2;
+        this.destreza += 2;
+        this.inteligencia += 2;
+        this.constitucion += 2;
+        this.suerte += 2;
+        this.carisma += 2;
         this.ataque += 2;
         this.defensa += 2;
         this.vida += 4 + constitucion/2;
         this.actualVida = vida;
         this.mana += 2 + inteligencia;
         this.actualMana = mana;
+        this.xp = 0;
+        this.xpNext += 50;
     }
 
     public void equipWeapon(Weapon weapon){
@@ -236,6 +250,12 @@ public class Player {
     public void setDinero(int dinero) {
         this.dinero = dinero;
     }
+    public void masDinero(int dinero) {
+        this.dinero += dinero;
+    }
+    public void menosDinero(int dinero) {
+        this.dinero -= dinero;
+    }
 
     public void whereI(){
         setCasillaX(map.getPlayer(true));
@@ -303,5 +323,36 @@ public class Player {
             setLugar(map.getPlayerPlace(casillaX, casillaY));
             map.nextTurn();
         }
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
+    }
+
+    public void addSkills(Skill skill) {
+        this.skills.add(skill);
+    }
+
+    public int getXp() {
+        return xp;
+    }
+
+    public void addXp(int points) {
+        this.xp += points;
+        if (xp>= xpNext) {
+            levelUp();
+        }
+    }
+
+    public int getXpNext() {
+        return xpNext;
+    }
+
+    public void setXpNext(int xpNext) {
+        this.xpNext = xpNext;
     }
 }

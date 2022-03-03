@@ -42,8 +42,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TURN"
-            app:layout_constraintEnd_toStartOf="@+id/goldText"
+            app:layout_constraintEnd_toStartOf="@+id/stageText"
             app:layout_constraintStart_toEndOf="@+id/settingsButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/placeText"/>
+
+        <TextView
+            android:id="@+id/stageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STAGE"
+            app:layout_constraintEnd_toStartOf="@+id/goldText"
+            app:layout_constraintStart_toEndOf="@+id/turnText"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@id/placeText"/>
 
@@ -130,7 +140,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/returnButton"
+            android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="RETURN"
@@ -188,19 +198,19 @@
             app:layout_constraintTop_toBottomOf="@+id/button" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/life"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LIFE"
             android:textColor="#000000"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/profileButton"
-            app:layout_constraintEnd_toStartOf="@+id/returnButton"
+            app:layout_constraintEnd_toStartOf="@+id/button"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/mana"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MANA"
@@ -208,7 +218,7 @@
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/inventoryButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/returnButton"
+            app:layout_constraintStart_toEndOf="@+id/button"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
