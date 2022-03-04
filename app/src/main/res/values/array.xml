@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="church">
+        <item>Esto es la iglesia, seas bienvenido</item>
+        <item>Jesus esta siempre contigo.</item>
+    </string-array>
+
+    <string-array name="forge">
+        <item>Bienvenido a la forja, que es lo que buscas?</item>
+        <item>Compra una espada, el mundo es peligroso ahi fuera-</item>
+        <item>Solo vendemos lo mejor de lo mejor.. No hagas caso a la espada oxidada.</item>
+    </string-array>
+
+    <string-array name="shop">
+        <item>Hola amigo! Dime, que es lo que quieres?</item>
+        <item>Aceite de lámpara, cuerda, bombas, lo quieres?</item>
+        <item>Es tuyo, amigo mío, siempre que tengas suficientes rupees!</item>
+    </string-array>
+
+    <string-array name="tavern">
+        <item>Saludos! Pasa, pasa amigo, sientate y disfruta.</item>
+        <item>Quieres una cerveza? Vino? Hidromiel? Tenemos lo que prefieras.</item>
+        <item>Rumores? Amigo, eso te costará un pequeño extra.</item>
+    </string-array>
+</resources>

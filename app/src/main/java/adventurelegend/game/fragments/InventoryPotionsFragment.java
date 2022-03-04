@@ -7,13 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentInventoryPotionsBinding;
+import adventurelegend.game.objects.PotionAdapter;
+import adventurelegend.game.objects.SpecialAdapter;
 
 public class InventoryPotionsFragment extends Fragment {
 
@@ -64,5 +69,11 @@ public class InventoryPotionsFragment extends Fragment {
                 navController.navigate(R.id.action_global_mapFragment);
             }
         });
+
+        PotionAdapter adapter = new PotionAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getPotions());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
     }
 }

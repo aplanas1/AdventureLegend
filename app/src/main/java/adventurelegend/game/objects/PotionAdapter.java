@@ -2,25 +2,21 @@ package adventurelegend.game.objects;
 
 import android.graphics.Color;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-
 import java.util.List;
 
-import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.ViewholderItemBinding;
 
-public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.ViewHolder> {
+public class PotionAdapter extends RecyclerView.Adapter<PotionAdapter.ViewHolder> {
 
-    private List<Weapon> list;
+    private List<Potion> list;
 
-    public WeaponAdapter(List<Weapon> list) {
+    public PotionAdapter(List<Potion> list) {
         this.list = list;
     }
 
@@ -34,11 +30,11 @@ public class WeaponAdapter extends RecyclerView.Adapter<WeaponAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
         holder.binding.nombre.setText(list.get(position).getNombre());
-        holder.binding.atributo.setText("Daño: " + list.get(position).getDamage());
+        holder.binding.atributo.setText("Vida: " + list.get(position).getCurarVida());
+        holder.binding.atributo2.setText("Mana: " + list.get(position).getCurarMana());
         holder.binding.precio.setText("Valor: " + list.get(position).getPrecio());
-        holder.binding.imagen.setImageResource(R.drawable.sword1);
+        holder.binding.imagen.setImageResource(R.drawable.potion1);
         holder.binding.cuadro.setBackgroundColor(Color.parseColor(list.get(position).getColor()));
     }
 

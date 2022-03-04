@@ -7,13 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentInventoryArmorsBinding;
+import adventurelegend.game.objects.ArmorAdapter;
+import adventurelegend.game.objects.SpecialAdapter;
 
 public class InventoryArmorsFragment extends Fragment {
 
@@ -65,7 +70,11 @@ public class InventoryArmorsFragment extends Fragment {
             }
         });
 
-        //SLIDING
+        ArmorAdapter adapter = new ArmorAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getArmors());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
 
     }
 }

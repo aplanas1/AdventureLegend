@@ -1,6 +1,9 @@
 package adventurelegend.game.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,19 +13,12 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
 import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
-import adventurelegend.game.databinding.FragmentInventoryWeaponsBinding;
 import adventurelegend.game.databinding.FragmentShoppingBinding;
 import adventurelegend.game.objects.ForgeAdapter;
-import adventurelegend.game.objects.ShopAdapter;
-import adventurelegend.game.objects.WeaponAdapter;
 
-public class ShoppingFragment extends Fragment {
+public class ForgeShopFragment extends Fragment {
 
     private FragmentShoppingBinding binding;
     private NavController navController;
@@ -49,14 +45,18 @@ public class ShoppingFragment extends Fragment {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_global_shopFragment);
+                navController.navigate(R.id.action_global_forgeFragment);
             }
         });
 
-        ShopAdapter adapter = new ShopAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getShop().getPotions(), ((GlobalPlayer) getActivity().getApplication()).getPlayer().getShop().getSpecials());
+        ForgeAdapter adapter = new ForgeAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getShop().getArmors(), ((GlobalPlayer) getActivity().getApplication()).getPlayer().getShop().getWeapons());
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
         binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+    }
+
+    public void comprar(){
+
     }
 }

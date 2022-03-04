@@ -88,7 +88,8 @@
     <action android:id="@+id/action_global_profileFragment" app:destination="@id/profileFragment" />
     <action android:id="@+id/action_global_skillsFragment" app:destination="@id/skillsFragment" />
     <action android:id="@+id/action_global_questsFragment" app:destination="@id/questsFragment" />
-    <action android:id="@+id/action_global_optionsFragment" app:destination="@id/optionsFragment" /><action android:id="@+id/action_global_townFragment" app:destination="@id/townFragment"/>
+    <action android:id="@+id/action_global_optionsFragment" app:destination="@id/optionsFragment" />
+    <action android:id="@+id/action_global_townFragment" app:destination="@id/townFragment"/>
     <fragment
         android:id="@+id/forgeFragment"
         android:name="adventurelegend.game.fragments.ForgeFragment"
@@ -108,7 +109,7 @@
     <action android:id="@+id/action_global_newGameFragment" app:destination="@id/newGameFragment" />
     <action android:id="@+id/action_global_homeFragment" app:destination="@id/homeFragment" /><action android:id="@+id/action_global_combatFragment" app:destination="@id/combatFragment"/>
     <fragment
-        android:id="@+id/mesageFragment2"
+        android:id="@+id/mesageFragment"
         android:name="adventurelegend.game.fragments.MesageFragment"
         android:label="fragment_mesage"
         tools:layout="@layout/fragment_mesage" />
@@ -117,5 +118,12 @@
         android:name="adventurelegend.game.fragments.ShoppingFragment"
         android:label="fragment_shopping"
         tools:layout="@layout/fragment_shopping" />
-    ES
+    <action android:id="@+id/action_global_mesageFragment" app:destination="@id/mesageFragment" />
+    <fragment
+        android:id="@+id/forgeShopFragment"
+        android:name="adventurelegend.game.fragments.ForgeShopFragment"
+        android:label="ForgeShopFragment"
+        tools:layout="@layout/fragment_shopping" />
+    <action android:id="@+id/action_global_forgeShopFragment" app:destination="@id/forgeShopFragment"/>
+    <action android:id="@+id/action_global_shoppingFragment" app:destination="@id/shoppingFragment"/>
 </navigation>

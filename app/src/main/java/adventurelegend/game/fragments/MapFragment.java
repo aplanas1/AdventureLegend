@@ -134,6 +134,8 @@ public class MapFragment extends Fragment {
                 } else if (locateMenu() == 2) {
                     ((GlobalPlayer)getActivity().getApplication()).getPlayer().setEnemy((int) (Math.random() * 3 + 1));
                     navController.navigate(R.id.action_global_combatFragment);
+                } else if (locateMenu() == 3) {
+                    navController.navigate(R.id.action_global_mesageFragment);
                 }
             }
         });

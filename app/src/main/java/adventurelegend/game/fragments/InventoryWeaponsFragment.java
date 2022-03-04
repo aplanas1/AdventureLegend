@@ -26,8 +26,6 @@ import java.util.List;
 import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentInventoryWeaponsBinding;
-import adventurelegend.game.databinding.ViewholderWeaponBinding;
-import adventurelegend.game.objects.Weapon;
 import adventurelegend.game.objects.WeaponAdapter;
 
 public class InventoryWeaponsFragment extends Fragment {
@@ -84,12 +82,6 @@ public class InventoryWeaponsFragment extends Fragment {
 
         binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         binding.recyclerView.setAdapter(adapter);
-
-        /*WeaponAdapter weaponAdapter = new WeaponAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getWeapons());
-        binding.recyclerView.setAdapter(weaponAdapter);
-        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.recyclerView.setAdapter(weaponAdapter);
-        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));*/
-
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
     }
 }

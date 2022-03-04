@@ -45,6 +45,14 @@ public class ForgeFragment extends Fragment {
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
 
         // PROFILE
+        binding.forge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_forgeShopFragment);
+            }
+        });
+
+        // PROFILE
         binding.profileButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

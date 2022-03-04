@@ -7,13 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentInventorySpecialBinding;
+import adventurelegend.game.objects.SpecialAdapter;
+import adventurelegend.game.objects.WeaponAdapter;
 
 public class InventorySpecialFragment extends Fragment {
 
@@ -64,5 +69,12 @@ public class InventorySpecialFragment extends Fragment {
                 navController.navigate(R.id.action_global_mapFragment);
             }
         });
+
+        SpecialAdapter adapter = new SpecialAdapter(((GlobalPlayer) getActivity().getApplication()).getPlayer().getInventory().getSpecials());
+
+        binding.recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.recyclerView.setAdapter(adapter);
+        binding.recyclerView.addItemDecoration(new DividerItemDecoration(getContext(), LinearLayoutManager.VERTICAL));
+
     }
 }

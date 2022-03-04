@@ -2,6 +2,7 @@ package adventurelegend.game.objects;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringJoiner;
 
 import adventurelegend.game.R;
 
@@ -25,6 +26,7 @@ public class Player {
     private int xp;
     private int xpNext;
     private Enemy enemy;
+    private Shop shop;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
         if (nombre.equals("cheater")) {
@@ -44,8 +46,8 @@ public class Player {
             this.carisma = 99;
             this.xp = 0;
             this.xpNext = 50;
-            this.armor = new Armor("Armadura legendaria del dragón antiguo", 999, "Armadura legendaria", 999);
-            this.weapon = new Weapon("Espada legendario del dragón antiguo", 999, "Espada legendaria", 999);
+            this.armor = new Armor("Armadura legendaria", 999, "Armadura legendaria", 99, 6);
+            this.weapon = new Weapon("Espada legendaria", 999, "Espada legendaria", 99, 6);
         } else {
             this.nivel = 1;
             this.nombre = nombre;
@@ -63,10 +65,11 @@ public class Player {
             this.carisma = carisma;
             this.xp = 0;
             this.xpNext = 50;
-            this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1);
-            this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1);
+            this.armor = new Armor("Ropas de tela", 2, "Ropas tipicas de cualquier granjero", 1, 1);
+            this.weapon = new Weapon("Espada de madera", 2, "Espsda rudimentaria de madera", 1, 1);
         }
         this.inventory = new Inventory();
+        this.shop = new Shop();
         this.map = new Map();
         whereI();
         skills = new ArrayList<>();
@@ -76,10 +79,10 @@ public class Player {
         skills.add(new Skill("Flamberge", 8, true, true, true, 5));
         inventory.addArmor(armor);
         inventory.addWeapon(weapon);
-        inventory.addPotion(new Potion("Pocion de vida", 5, "Pocion que sana vida", 10, 0));
-        inventory.addPotion(new Potion("Pocion de megavida", 5, "Pocion que sana vida", 10, 0));
-        inventory.addPotion(new Potion("Pocion de mana", 5, "Pocion que sana mana", 0, 10));
-        inventory.addPotion(new Potion("Pocion total", 500, "Pocion que cura por completo", 100, 100));
+        inventory.addPotion(new Potion("Pocion de vida", 5, "Pocion que sana vida", 10, 0, 1));
+        inventory.addPotion(new Potion("Pocion de megavida", 5, "Pocion que sana vida", 10, 0, 1));
+        inventory.addPotion(new Potion("Pocion de mana", 5, "Pocion que sana mana", 0, 10, 2));
+        inventory.addPotion(new Potion("Pocion total", 500, "Pocion que cura por completo", 100, 100, 3));
     }
 
     public void levelUp() {
@@ -109,11 +112,11 @@ public class Player {
     }
 
     public void unequipWeapon(Weapon weapon){
-        this.weapon = new Weapon("",0,"",0);
+        this.weapon = new Weapon("",0,"",0, 0);
     }
 
     public void unequipArmor(Armor armor){
-        this.armor = new Armor("",0,"",0);
+        this.armor = new Armor("",0,"",0, 0);
     }
 
     public void curar(Potion potion) {
@@ -426,5 +429,13 @@ public class Player {
 
     public void reciveDamage(int ap){
         if (ap - defensa >= 0) this.actualVida -= ap - defensa;
+    }
+
+    public Shop getShop() {
+        return shop;
+    }
+
+    public void setShop(Shop shop) {
+        this.shop = shop;
     }
 }
