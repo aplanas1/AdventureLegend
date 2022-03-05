@@ -29,8 +29,9 @@ public class Player {
     private Shop shop;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
-        if (nombre.equals("Pepito el cuchillas")) {
-            this.nombre = nombre;
+        if (nombre.equals("a")) {
+            this.nivel = 5;
+            this.nombre = "Pepito el cuchillas";
             this.vida = 45;
             this.actualVida = vida;
             this.mana = 10;
@@ -45,12 +46,10 @@ public class Player {
             this.carisma = 3;
             this.xp = 0;
             this.xpNext = 250;
-            setNivel(5);
             setDinero(394);
             this.armor = new Armor("Armadura de cuero", 15, "Armadura sencilla de cuero", 3, 2);
             this.weapon = new Weapon("Espada de hierro", 20, "Espada clasica de hierro", 6, 3);
-        }
-        if (nombre.equals("cheater")) {
+        } else if (nombre.equals("cheater")) {
             this.nivel = 99;
             this.nombre = nombre;
             this.vida = 99;
@@ -67,6 +66,7 @@ public class Player {
             this.carisma = 99;
             this.xp = 0;
             this.xpNext = 50;
+            setDinero(999);
             this.armor = new Armor("Armadura legendaria", 999, "Armadura legendaria", 99, 6);
             this.weapon = new Weapon("Espada legendaria", 999, "Espada legendaria", 99, 6);
         } else {

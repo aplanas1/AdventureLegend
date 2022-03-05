@@ -46,7 +46,7 @@ public class ProfileFragment extends Fragment {
         });
 
         binding.nombre.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getNombre());
-        binding.level.setText("LVL " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getNivel());
+        binding.level.setText("Lvl " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getNivel());
         binding.dinero.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getDinero() + " g" );
         binding.clase.setText("Aventurero");
         binding.vida.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualVida() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getVida());

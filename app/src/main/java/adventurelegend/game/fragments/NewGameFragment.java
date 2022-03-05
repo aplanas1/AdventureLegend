@@ -152,7 +152,7 @@ public class NewGameFragment extends Fragment {
 
         //CARISMA
         binding.carismaText.setText("" + carisma);
-        binding.carismaMenos.setOnClickListener(new View.OnClickListener() {
+        binding.carismaMas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (totales > 0) {

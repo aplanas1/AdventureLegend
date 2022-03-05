@@ -51,7 +51,7 @@ public class LoadFragment extends Fragment {
         binding.save1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((GlobalPlayer)getActivity().getApplication()).setPlayer(new Player("Pepito el cuchillas",5,4,1,4,2,3));
+                ((GlobalPlayer)getActivity().getApplication()).setPlayer(new Player("a",5,4,1,4,2,3));
                 navController.navigate(R.id.action_global_mapFragment);
             }
         });
