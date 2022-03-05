@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
 import adventurelegend.game.databinding.FragmentChurchBinding;
+import adventurelegend.game.objects.Potion;
 
 
 public class ChurchFragment extends Fragment {
@@ -45,6 +46,23 @@ public class ChurchFragment extends Fragment {
         binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
 
+
+        // PRAY
+        binding.pray.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).getPlayer().curar(new Potion("max", 1000, "max", 1000, 1000, 3));
+                binding.life.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualVida() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getVida());
+                binding.mana.setText(((GlobalPlayer)getActivity().getApplication()).getPlayer().getActualMana() + " / " + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMana());
+            }
+        });
+        // MENU
+        binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_optionsFragment);
+            }
+        });
         // PROFILE
         binding.profileButton.setOnClickListener(new View.OnClickListener() {
             @Override

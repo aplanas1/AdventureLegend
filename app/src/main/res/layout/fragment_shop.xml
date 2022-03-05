@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/shop"
+        android:layout_marginTop="60dp"
         app:layout_constraintTop_toTopOf="@id/frameTop"
         app:layout_constraintBottom_toTopOf="@id/interaction"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +62,8 @@
             android:id="@+id/turnText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/black"
             android:text="TURN"
             app:layout_constraintEnd_toStartOf="@+id/stageText"
             app:layout_constraintStart_toEndOf="@+id/settingsButton"
@@ -71,6 +74,8 @@
             android:id="@+id/stageText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/black"
             android:text="STAGE"
             app:layout_constraintEnd_toStartOf="@+id/goldText"
             app:layout_constraintStart_toEndOf="@+id/turnText"
@@ -81,6 +86,8 @@
             android:id="@+id/placeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/black"
             android:text="PUEBLO"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/goldText"
@@ -91,6 +98,8 @@
             android:id="@+id/goldText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/black"
             android:text="ORO"
             android:layout_marginRight="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -102,51 +111,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/interaction"
         android:layout_width="match_parent"
-        android:layout_height="130dp"
+        android:layout_height="70dp"
         android:background="#A3745B"
         app:layout_constraintBottom_toTopOf="@id/frameBottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/tabern"
+            android:id="@+id/buy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tabern"
-            app:layout_constraintTop_toTopOf="@id/interaction"
-            app:layout_constraintStart_toStartOf="@id/interaction"
-            app:layout_constraintEnd_toStartOf="@id/shop"
-            app:layout_constraintBottom_toTopOf="@id/forge" />
-
-        <Button
-            android:id="@+id/shop"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Shop"
-            app:layout_constraintTop_toTopOf="@id/interaction"
-            app:layout_constraintEnd_toEndOf="@id/interaction"
-            app:layout_constraintStart_toEndOf="@id/tabern"
-            app:layout_constraintBottom_toTopOf="@id/church" />
-
-        <Button
-            android:id="@+id/forge"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Forge"
+            android:text="Buy"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="@id/interaction"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/interaction"
-            app:layout_constraintTop_toBottomOf="@id/tabern"
-            app:layout_constraintEnd_toStartOf="@id/church"/>
-
-        <Button
-            android:id="@+id/church"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Church"
-            app:layout_constraintBottom_toBottomOf="@id/interaction"
-            app:layout_constraintEnd_toEndOf="@id/interaction"
-            app:layout_constraintTop_toBottomOf="@id/shop"
-            app:layout_constraintStart_toEndOf="@id/forge"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,6 +144,8 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
             android:text="RETURN"
             android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -222,6 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="LIFE"
+            android:fontFamily="@font/redressed"
             android:textColor="#000000"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/profileButton"
@@ -234,6 +218,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="MANA"
+            android:fontFamily="@font/redressed"
             android:textColor="#000000"
             android:textSize="24dp"
             app:layout_constraintBottom_toTopOf="@+id/inventoryButton"

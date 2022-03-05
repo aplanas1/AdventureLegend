@@ -44,8 +44,15 @@ public class ShopFragment extends Fragment {
         binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
 
+        // MENU
+        binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_optionsFragment);
+            }
+        });
         // PROFILE
-        binding.forge.setOnClickListener(new View.OnClickListener() {
+        binding.buy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 navController.navigate(R.id.action_global_shoppingFragment);

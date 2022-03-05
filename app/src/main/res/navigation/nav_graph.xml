@@ -126,4 +126,10 @@
         tools:layout="@layout/fragment_shopping" />
     <action android:id="@+id/action_global_forgeShopFragment" app:destination="@id/forgeShopFragment"/>
     <action android:id="@+id/action_global_shoppingFragment" app:destination="@id/shoppingFragment"/>
+    <fragment
+        android:id="@+id/loadFragment"
+        android:name="adventurelegend.game.fragments.LoadFragment"
+        android:label="LoadFragment"
+        tools:layout="@layout/fragment_saves" />
+    <action android:id="@+id/action_global_loadFragment" app:destination="@id/loadFragment"/>
 </navigation>

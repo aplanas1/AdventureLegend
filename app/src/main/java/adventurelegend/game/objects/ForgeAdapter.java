@@ -54,20 +54,6 @@ public class ForgeAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         if(holder instanceof WeaponViewHolder){
             ((WeaponViewHolder) holder).populate(listWeapon.get(position - listArmor.size()));
         }
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder instanceof ArmorViewHolder){
-                    comprar.comprarArmadura(listArmor.get(position));
-
-                }
-
-                if(holder instanceof WeaponViewHolder){
-                    comprar.comprarArma(listWeapon.get(position - listArmor.size()));
-                }
-            }
-        });
     }
 
     @Override

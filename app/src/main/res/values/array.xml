@@ -4,11 +4,12 @@
     <string-array name="church">
         <item>Esto es la iglesia, seas bienvenido</item>
         <item>Jesus esta siempre contigo.</item>
+        <item>Si eres un verdadero hijo de Dios, tus oraciones te sanarán.</item>
     </string-array>
 
     <string-array name="forge">
         <item>Bienvenido a la forja, que es lo que buscas?</item>
-        <item>Compra una espada, el mundo es peligroso ahi fuera-</item>
+        <item>Compra una espada, el mundo es peligroso ahi fuera.</item>
         <item>Solo vendemos lo mejor de lo mejor.. No hagas caso a la espada oxidada.</item>
     </string-array>
 
@@ -20,6 +21,7 @@
 
     <string-array name="tavern">
         <item>Saludos! Pasa, pasa amigo, sientate y disfruta.</item>
+        <item>Hay cama disponible para agotados viajeros como tu.</item>
         <item>Quieres una cerveza? Vino? Hidromiel? Tenemos lo que prefieras.</item>
         <item>Rumores? Amigo, eso te costará un pequeño extra.</item>
     </string-array>

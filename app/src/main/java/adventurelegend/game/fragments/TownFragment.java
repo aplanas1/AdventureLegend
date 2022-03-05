@@ -44,6 +44,13 @@ public class TownFragment extends Fragment {
         binding.stageText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getDay());
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
 
+        // MENU
+        binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_optionsFragment);
+            }
+        });
         // TAVERN
         binding.tavernButton.setOnClickListener(new View.OnClickListener() {
             @Override

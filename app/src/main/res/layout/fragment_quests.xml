@@ -30,17 +30,131 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/quest1"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
         android:layout_marginTop="80dp"
-        android:background="#BF633C20"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/quest2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hunt Wolfs:"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@id/objective1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/objective1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 5 wolfs"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title1" />
+
+        <TextView
+            android:id="@+id/reward1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reward:"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@id/money1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/money1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60 gold"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reward1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/quest2"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="270dp"
+        android:background="@drawable/border"
+        app:layout_constraintTop_toBottomOf="@+id/quest1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/viewholder_item" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hunt Bears:"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@id/objective2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/objective2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 / 2 bears"
+            android:layout_marginLeft="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title2" />
+
+        <TextView
+            android:id="@+id/reward2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reward:"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@id/money2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/money2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="90 gold"
+            android:layout_marginRight="10dp"
+            android:fontFamily="@font/redressed"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/reward2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

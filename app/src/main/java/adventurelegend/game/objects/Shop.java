@@ -15,16 +15,20 @@ public class Shop {
         this.armors = new ArrayList<>();
         this.potions = new ArrayList<>();
         this.specials = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
-            addWeapon(new Weapon("Hola", 1, "pepe", 1, 1));
+        for (int i = 0; i < 8; i++) {
+            addWeapon(new Weapon("Espada de hierro", 10, "Espada rudimentaria de hierro", 5, 2));
+        }
+        for (int i = 0; i < 4; i++) {
+            addArmor(new Armor("Armadura de hierro", 10, "Armadura rudimentaria de hierro", 5, 2));
         }
         for (int i = 0; i < 10; i++) {
-            addArmor(new Armor("Adios", 1, "pepe", 1, 1));
+            addPotion(new Potion("Pocion de vida", 5, "Pocion para sanar la salud", 10, 0,1));
         }
-        for (int i = 0; i < 10; i++) {
-            addPotion(new Potion("Pepe", 1, "pepe", 1, 1,1));
-        }for (int i = 0; i < 10; i++) {
-            addSpecial(new Special("Popo", 1, "pepe", 1));
+        for (int i = 0; i < 5; i++) {
+            addPotion(new Potion("Pocion de mana", 5, "Pocion para sanar el mana", 0, 10, 2));
+        }
+        for (int i = 0; i < 3; i++) {
+            addSpecial(new Special("Madera", 3, "Madera", 1));
         }
 
     }

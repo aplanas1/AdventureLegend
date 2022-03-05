@@ -3,18 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/drawable/border.xml" value="0.327" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_church.xml" value="0.358695652173913" />
-        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_combat.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_combat.xml" value="0.5" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_forge.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_home.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_armors.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_potions.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_special.xml" value="0.36666666666666664" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_inventory_weapons.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_map.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_mostrar_elemento.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_new_game.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_options.xml" value="0.25" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_profile.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_quests.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_recycler_elementos.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_saves.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_shop.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_shopping.xml" value="0.358695652173913" />
+        <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_skills.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_tavern.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/fragment_town.xml" value="0.358695652173913" />
         <entry key="..\:/Android/AndroidStudioProjects/AdventureLegend/app/src/main/res/layout/viewholder_item.xml" value="0.36666666666666664" />

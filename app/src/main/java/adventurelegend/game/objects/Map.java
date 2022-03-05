@@ -112,4 +112,7 @@ public class Map {
     public int getCasillaImage(int x, int y){
         return casillas[x][y].getPlace_image();
     }
+    public int getPlayerImage(int x, int y){
+        return casillas[x][y].getPlayer_image();
+    }
 }

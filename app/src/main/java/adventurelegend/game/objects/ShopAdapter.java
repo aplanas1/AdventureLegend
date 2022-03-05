@@ -53,20 +53,6 @@ public class ShopAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         if(holder instanceof SpecialViewHolder){
             ((SpecialViewHolder) holder).populate(listSpecial.get(position - listPotion.size()));
         }
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(holder instanceof PotionViewHolder){
-                    comprar.comprarPotion(listPotion.get(position));
-
-                }
-
-                if(holder instanceof SpecialViewHolder){
-                    comprar.comprarSpecial(listSpecial.get(position - listPotion.size()));
-                }
-            }
-        });
     }
 
     @Override

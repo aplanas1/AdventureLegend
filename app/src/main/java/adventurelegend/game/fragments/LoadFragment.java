@@ -1,6 +1,9 @@
 package adventurelegend.game.fragments;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -8,16 +11,14 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-
+import adventurelegend.game.GlobalPlayer;
 import adventurelegend.game.R;
-import adventurelegend.game.databinding.FragmentSkillsBinding;
+import adventurelegend.game.databinding.FragmentSavesBinding;
+import adventurelegend.game.objects.Player;
 
-public class SkillsFragment extends Fragment {
+public class LoadFragment extends Fragment {
 
-    private FragmentSkillsBinding binding;
+    private FragmentSavesBinding binding;
     private NavController navController;
 
     @Override
@@ -27,7 +28,7 @@ public class SkillsFragment extends Fragment {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return (binding = FragmentSkillsBinding.inflate(inflater, container, false)).getRoot();
+        return (binding = FragmentSavesBinding.inflate(inflater, container, false)).getRoot();
     }
 
     @Override
@@ -41,6 +42,17 @@ public class SkillsFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 getFragmentManager().popBackStack();
+                //getActivity().finish();
+                //navController.navigate(R.id.action_global_mapFragment);
+            }
+        });
+
+        // PROFILE
+        binding.save1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ((GlobalPlayer)getActivity().getApplication()).setPlayer(new Player("Pepito el cuchillas",5,4,1,4,2,3));
+                navController.navigate(R.id.action_global_mapFragment);
             }
         });
     }

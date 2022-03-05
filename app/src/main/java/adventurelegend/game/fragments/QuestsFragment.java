@@ -40,7 +40,7 @@ public class QuestsFragment extends Fragment {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_global_mapFragment);
+                getFragmentManager().popBackStack();
             }
         });
     }

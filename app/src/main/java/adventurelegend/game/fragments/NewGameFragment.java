@@ -42,6 +42,14 @@ public class NewGameFragment extends Fragment {
 
         binding.totalesText.setText("" + totales);
 
+        // BACK
+        binding.back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_homeFragment);
+            }
+        });
+
         //FUERZA
         binding.fuerzaText.setText("" + fuerza);
         binding.fuerzaMas.setOnClickListener(new View.OnClickListener() {

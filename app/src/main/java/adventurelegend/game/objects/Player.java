@@ -29,6 +29,27 @@ public class Player {
     private Shop shop;
 
     public Player(String nombre, int fuerza, int destreza, int inteligencia, int constitucion, int suerte, int carisma) {
+        if (nombre.equals("Pepito el cuchillas")) {
+            this.nombre = nombre;
+            this.vida = 45;
+            this.actualVida = vida;
+            this.mana = 10;
+            this.actualMana = mana;
+            this.ataque = 10;
+            this.defensa = 10;
+            this.fuerza = 5;
+            this.destreza = 4;
+            this.inteligencia = 1;
+            this.constitucion = 4;
+            this.suerte = 2;
+            this.carisma = 3;
+            this.xp = 0;
+            this.xpNext = 250;
+            setNivel(5);
+            setDinero(394);
+            this.armor = new Armor("Armadura de cuero", 15, "Armadura sencilla de cuero", 3, 2);
+            this.weapon = new Weapon("Espada de hierro", 20, "Espada clasica de hierro", 6, 3);
+        }
         if (nombre.equals("cheater")) {
             this.nivel = 99;
             this.nombre = nombre;
@@ -76,7 +97,7 @@ public class Player {
         skills.add(new Skill("Slash", 4, true, true, false, 2));
         skills.add(new Skill("Fireball", 6, false, false, true, 3));
         skills.add(new Skill("Ice", 6, false, false, true, 3));
-        skills.add(new Skill("Flamberge", 8, true, true, true, 5));
+        skills.add(new Skill("Flamberge", 10, true, true, true, 5));
         inventory.addArmor(armor);
         inventory.addWeapon(weapon);
         inventory.addPotion(new Potion("Pocion de vida", 5, "Pocion que sana vida", 10, 0, 1));
@@ -416,13 +437,13 @@ public class Player {
 
     public void setEnemy(int dificultad) {
         if (dificultad == 1) {
-            this.enemy = new Enemy("Lobo", R.drawable.star1,10,5,0, 20);
+            this.enemy = new Enemy("Lobo", R.drawable.wolf,20,10,0, 20);
         }
         if (dificultad == 2) {
-            this.enemy = new Enemy("Orco", R.drawable.sword1,20,10,4, 50);
+            this.enemy = new Enemy("Orco", R.drawable.orc,50,25,4, 50);
         }
         if (dificultad == 3) {
-            this.enemy = new Enemy("Dragon", R.drawable.potion1,100,100,10, 500);
+            this.enemy = new Enemy("Dragon", R.drawable.dragon,500,100,10, 500);
         }
 
     }
@@ -438,4 +459,6 @@ public class Player {
     public void setShop(Shop shop) {
         this.shop = shop;
     }
+
+
 }

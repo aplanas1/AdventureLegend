@@ -52,6 +52,13 @@ public class MapFragment extends Fragment {
         binding.placeText.setText("" + ((GlobalPlayer)getActivity().getApplication()).getPlayer().getLugar());
         setMap();
 
+        // MENU
+        binding.settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_global_optionsFragment);
+            }
+        });
         // UP
         binding.arrowUp.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,7 +161,11 @@ public class MapFragment extends Fragment {
                 ImageView tv = new ImageView(getActivity());
                 if (i >= 0 && i < ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().casillas.length) {
                     if (j >= 0 && j < ((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().casillas.length) {
-                        tv.setImageResource(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getCasillaImage(i,j));
+                        if (i == minX +2 && j == minY + 2){
+                            tv.setImageResource(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getPlayerImage(i,j));
+                        } else{
+                            tv.setImageResource(((GlobalPlayer)getActivity().getApplication()).getPlayer().getMap().getCasillaImage(i,j));
+                        }
                     } else {
                         tv.setImageResource(R.drawable.backpack);
                     }

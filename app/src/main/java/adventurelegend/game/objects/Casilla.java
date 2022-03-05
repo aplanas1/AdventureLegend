@@ -19,27 +19,29 @@ public class Casilla {
         this.propiedad = propiedad;
         if (propiedad == 1){
             this.lugar = "Pueblo";
-            this.place_image = R.drawable.star1;
+            this.place_image = R.drawable.townc;
+            this.player_image = R.drawable.townplayer;
         } else if (propiedad == 2) {
             this.lugar = "Bosque";
-            this.place_image = R.drawable.sword1;
+            this.place_image = R.drawable.forest;
+            this.player_image = R.drawable.forestplayer;
         } else if (propiedad == 3) {
             this.lugar = "Lago";
-            this.place_image = R.drawable.potion1;
+            this.place_image = R.drawable.lake;
+            this.player_image = R.drawable.lakeplayer;
         } else {
             this.lugar = "Prado";
-            this.place_image = R.drawable.arrow;
+            this.place_image = R.drawable.prado;
+            this.player_image = R.drawable.pradoplayer;
         }
         this.player = false;
     }
 
     public void setPlayer() {
         this.player = true;
-        player_image = R.drawable.helmet1;
     }
     public void desetPlayer() {
         this.player = false;
-        this.player_image = R.drawable.star1;
     }
 
     public String getLugar() {

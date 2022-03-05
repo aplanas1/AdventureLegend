@@ -13,9 +13,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:text="Special"
-        android:textColor="#000000"
-        android:textSize="32dp"
-
+        android:fontFamily="@font/redressed"
+        android:textColor="@color/white"
+        android:textSize="34dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

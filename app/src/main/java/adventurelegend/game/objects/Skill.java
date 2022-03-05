@@ -6,7 +6,8 @@ public class Skill {
     private boolean fuerza;
     private boolean destreza;
     private boolean inteligencia;
-    public int cost;
+    private int cost;
+    private int image;
 
     public Skill(String name, int damage, boolean fuerza, boolean destreza, boolean inteligencia, int cost) {
         this.name = name;

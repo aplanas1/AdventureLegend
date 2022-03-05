@@ -54,14 +54,7 @@ public class HomeFragment extends Fragment {
         binding.loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navController.navigate(R.id.action_global_savesFragment);
-            }
-        });
-        // OPTIONS
-        binding.optionsButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                navController.navigate(R.id.action_global_optionsFragment);
+                navController.navigate(R.id.action_global_loadFragment);
             }
         });
         // EXIT
